@@ -1,0 +1,2819 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>21&nbsp; Semantic Mapping – Technical Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./spe.html" rel="next">
+<link href="./rano.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="resources/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch7_psychometrics.html">Measure Development</a></li><li class="breadcrumb-item"><a href="./smt.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Semantic Mapping</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Technical Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/neurology-multitudes/technical-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Technical-Manual.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Executive Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2_mission-vision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mission and Vision</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3_fairness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Fairness in Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4_participants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multitudes Development Participants</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5_screening-sequence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multitudes Screening Sequence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6_domains-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Domains and Measures</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Measure Development</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7_psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Psychometric Approach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dgs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Digit Span Forward</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./elie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Elision-Expressive</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./elir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elision-Receptive</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expressive Vocabulary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lco.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Listening Comprehension</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lnf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Letter Naming Fluency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lsf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Letter Sound Fluency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Nonword Reading</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nsp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Narrative Story Production</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nwr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Nonword Repetition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./orf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Oral Reading Fluency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ranl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Rapid Automatized Naming of Letters</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rano.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Rapid Automatized Naming of Objects</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./smt.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Semantic Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./spe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Spelling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./srt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Sentence Repetition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Word Reading</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Universal Screening</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch20_us_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch21_us_support-needed-def.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Definition of ‘Support Needed’</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch22_us_sample.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Sample</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch23_us_modeling-approach.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Approach to Screening Model Building and Evaluation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch24_us_final-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Final Screening Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#task-description" id="toc-task-description" class="nav-link active" data-scroll-target="#task-description"><span class="header-section-number">21.1</span> Task Description</a></li>
+  <li><a href="#construct" id="toc-construct" class="nav-link" data-scroll-target="#construct"><span class="header-section-number">21.2</span> Construct</a></li>
+  <li><a href="#theoretical-and-empirical-foundations" id="toc-theoretical-and-empirical-foundations" class="nav-link" data-scroll-target="#theoretical-and-empirical-foundations"><span class="header-section-number">21.3</span> Theoretical and Empirical Foundations</a></li>
+  <li><a href="#item-development" id="toc-item-development" class="nav-link" data-scroll-target="#item-development"><span class="header-section-number">21.4</span> Item Development</a></li>
+  <li><a href="#scoring" id="toc-scoring" class="nav-link" data-scroll-target="#scoring"><span class="header-section-number">21.5</span> Scoring</a></li>
+  <li><a href="#calibration-samples" id="toc-calibration-samples" class="nav-link" data-scroll-target="#calibration-samples"><span class="header-section-number">21.6</span> Calibration Samples</a></li>
+  <li><a href="#psychometric-analysis" id="toc-psychometric-analysis" class="nav-link" data-scroll-target="#psychometric-analysis"><span class="header-section-number">21.7</span> Psychometric Analysis</a>
+  <ul class="collapse">
+  <li><a href="#basic-item-statistics" id="toc-basic-item-statistics" class="nav-link" data-scroll-target="#basic-item-statistics"><span class="header-section-number">21.7.1</span> Basic Item Statistics</a></li>
+  <li><a href="#rasch-analysis" id="toc-rasch-analysis" class="nav-link" data-scroll-target="#rasch-analysis"><span class="header-section-number">21.7.2</span> Rasch Analysis</a></li>
+  </ul></li>
+  <li><a href="#criterion-validity-evidence" id="toc-criterion-validity-evidence" class="nav-link" data-scroll-target="#criterion-validity-evidence"><span class="header-section-number">21.8</span> Criterion Validity Evidence</a>
+  <ul class="collapse">
+  <li><a href="#sample" id="toc-sample" class="nav-link" data-scroll-target="#sample"><span class="header-section-number">21.8.1</span> Sample</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add logo to sidebar on all pages - tight fit
+  const sidebar = document.querySelector('.sidebar-navigation');
+  if (sidebar) {
+    const logoDiv = document.createElement('div');
+    logoDiv.className = 'sidebar-logo';
+    logoDiv.innerHTML = '<img src="resources/multitudes_logo_tagline.jpg" alt="Logo" style="width: 100%; height: auto; display: block;">';
+    sidebar.insertBefore(logoDiv, sidebar.firstChild);
+  }
+  
+  // Add logo at the very top of the main content on index page only
+  const isIndexPage = window.location.pathname.endsWith('index.html') || 
+                      window.location.pathname.endsWith('/');
+  
+  if (isIndexPage) {
+    const mainContent = document.querySelector('#quarto-content main');
+    if (mainContent) {
+      const logoDiv = document.createElement('div');
+      logoDiv.style.textAlign = 'center';
+      logoDiv.style.marginTop = '1rem';
+      logoDiv.style.marginBottom = '1rem';
+      logoDiv.innerHTML = '<img src="resources/multitudes_logo_tagline.jpg" alt="Logo" style="max-width: 500px;">';
+      mainContent.insertBefore(logoDiv, mainContent.firstChild);
+      
+      // Center title and subtitle on index page only
+      const title = mainContent.querySelector('h1.title');
+      if (title) {
+        title.style.textAlign = 'center';
+      }
+      const subtitle = mainContent.querySelector('.subtitle');
+      if (subtitle) {
+        subtitle.style.textAlign = 'center';
+      }
+    }
+  }
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./ch7_psychometrics.html">Measure Development</a></li><li class="breadcrumb-item"><a href="./smt.html"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Semantic Mapping</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Semantic Mapping</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="task-description" class="level2" data-number="21.1">
+<h2 data-number="21.1" class="anchored" data-anchor-id="task-description"><span class="header-section-number">21.1</span> Task Description</h2>
+<p>Children are shown a group of pictures and are asked to choose the picture that doesn’t belong with the others. The constructs represented by the items become more complex to increase item difficulty.</p>
+</section>
+<section id="construct" class="level2" data-number="21.2">
+<h2 data-number="21.2" class="anchored" data-anchor-id="construct"><span class="header-section-number">21.2</span> Construct</h2>
+<p>The Semantic Mapping task requires knowledge of categories and features that create a relationship between items. It requires doing a fast mapping of the objects depicted to identify within group belonging/exclusion. This task can be administered in any language given that it is a receptive task and children simply point to the picture that does not belong. The test has been calibrated in English and Spanish, but the administration instructions are available in Arabic, Madarin Tagalog, and Vietnamese.</p>
+</section>
+<section id="theoretical-and-empirical-foundations" class="level2" data-number="21.3">
+<h2 data-number="21.3" class="anchored" data-anchor-id="theoretical-and-empirical-foundations"><span class="header-section-number">21.3</span> Theoretical and Empirical Foundations</h2>
+<p>Semantic mapping provides a measure of semantic depth versus the breadth measured by the Expressive Vocabulary (EVO) task. Measures of semantic depth show slower growth in children with language disorders across school-age <span class="citation" data-cites="Mcgregor2013">(<a href="references.html#ref-Mcgregor2013" role="doc-biblioref">McGregor et al. 2013</a>)</span> and can be used to distinguish bilingual children with and without language difficulties <span class="citation" data-cites="Jasso2020">(<a href="references.html#ref-Jasso2020" role="doc-biblioref">Jasso et al. 2020</a>)</span>. Individuals must identify underlying relationships between objects which measures not only semantic knowledge but also underlying concept development. Concept development undergirds reading comprehension and is crucial for providing the resources for reading development across languages <span class="citation" data-cites="Kim2023">(<a href="references.html#ref-Kim2023" role="doc-biblioref">Kim 2023</a>)</span>.</p>
+</section>
+<section id="item-development" class="level2" data-number="21.4">
+<h2 data-number="21.4" class="anchored" data-anchor-id="item-development"><span class="header-section-number">21.4</span> Item Development</h2>
+<p>A list of semantic categories was developed by the research team, using the words targeted by the curricula used in dual language programs as a reference. These categories were both ordinate (e.g., animals) and subordinate (e.g., farm animals), and had different levels of concreteness, ranging from highly concrete (e.g., fruits) to abstract (e.g., things that produce artificial light).</p>
+<p>For each category, one foil was selected. These foils could be radically different for easier items (e.g., a rocket for a clothing category including a t-shirt and a dress) to moderately different for harder items (e.g., a spoon for a category of gardening tools including a rake and a shovel).</p>
+<p>The number of pictures per item also varied as a proxy of difficulty, ranging from 3 pictures (2 targets and 1 foil) for easier items to 5 pictures (4 targets and 1 foil) for harder items. Researchers used iStock to choose the real pictures to represent both the target and foils. The chosen pictures underwent a rigorous selection process to meet specific criteria:</p>
+<ul>
+<li><strong>Easily Recognizable.</strong> Emphasis was placed on selecting images that could be easily identified.</li>
+<li><strong>Consistent Background.</strong> Preference was given to pictures with a clean and unobtrusive background, and a white background was opted for whenever possible. For those cases in which at least one of the pictures required a background, pictures with backgrounds were selected for all the items, to ensure visual consistency and avoid children’s use of the background as influencing their selection.</li>
+<li><strong>Diversity Representation.</strong> The Justice, Equity, Diversity, and Inclusion (JEDI) team reviewed all the selected pictures to ensure diversity in representation, based on race/ethnicity, gender identity, age, cultural artifacts, etc.</li>
+<li><strong>Cultural responsiveness.</strong> Items that were potentially culturally unfamiliar or inappropriate were deliberately excluded from the final selection.</li>
+</ul>
+</section>
+<section id="scoring" class="level2" data-number="21.5">
+<h2 data-number="21.5" class="anchored" data-anchor-id="scoring"><span class="header-section-number">21.5</span> Scoring</h2>
+<p>Dichotomous fixed response format of 0 points for incorrect responses or non-responses and 1 point for correct ones.</p>
+</section>
+<section id="calibration-samples" class="level2" data-number="21.6">
+<h2 data-number="21.6" class="anchored" data-anchor-id="calibration-samples"><span class="header-section-number">21.6</span> Calibration Samples</h2>
+<div class="landscape">
+<div class="cell">
+<div id="tbl-calibration-samples-smt" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-calibration-samples-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;21.1: Demographic Characteristics of Calibration Samples for the English and Spanish Semantic Mapping Tasks
+</figcaption>
+<div aria-describedby="tbl-calibration-samples-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="rhalowgmgj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#rhalowgmgj table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#rhalowgmgj thead, #rhalowgmgj tbody, #rhalowgmgj tfoot, #rhalowgmgj tr, #rhalowgmgj td, #rhalowgmgj th {
+  border-style: none;
+}
+
+#rhalowgmgj p {
+  margin: 0;
+  padding: 0;
+}
+
+#rhalowgmgj .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 60%;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#rhalowgmgj .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rhalowgmgj .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rhalowgmgj .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rhalowgmgj .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rhalowgmgj .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rhalowgmgj .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rhalowgmgj .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rhalowgmgj .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#rhalowgmgj .gt_group_heading {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#rhalowgmgj .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rhalowgmgj .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rhalowgmgj .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rhalowgmgj .gt_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rhalowgmgj .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhalowgmgj .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rhalowgmgj .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rhalowgmgj .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#rhalowgmgj .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhalowgmgj .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rhalowgmgj .gt_last_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhalowgmgj .gt_first_grand_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_last_grand_summary_row_top {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rhalowgmgj .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhalowgmgj .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhalowgmgj .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhalowgmgj .gt_left {
+  text-align: left;
+}
+
+#rhalowgmgj .gt_center {
+  text-align: center;
+}
+
+#rhalowgmgj .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rhalowgmgj .gt_font_normal {
+  font-weight: normal;
+}
+
+#rhalowgmgj .gt_font_bold {
+  font-weight: bold;
+}
+
+#rhalowgmgj .gt_font_italic {
+  font-style: italic;
+}
+
+#rhalowgmgj .gt_super {
+  font-size: 65%;
+}
+
+#rhalowgmgj .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#rhalowgmgj .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rhalowgmgj .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#rhalowgmgj .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#rhalowgmgj .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#rhalowgmgj .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#rhalowgmgj .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#rhalowgmgj .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#rhalowgmgj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings gt_spanner_row header">
+<th rowspan="2" id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th colspan="3" id="level 1; stat_1_1" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+<strong>English</strong>
+</div></th>
+<th colspan="3" id="level 1; stat_1_2" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+<strong>Spanish</strong>
+</div></th>
+</tr>
+<tr class="gt_col_headings even">
+<th id="stat_1_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>K</strong><br>
+N = 435</th>
+<th id="stat_2_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G1</strong><br>
+N = 486</th>
+<th id="stat_3_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G2</strong><br>
+N = 36</th>
+<th id="stat_1_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>K</strong><br>
+N = 1,000</th>
+<th id="stat_2_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G1</strong><br>
+N = 1,050</th>
+<th id="stat_3_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G2</strong><br>
+N = 0</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Timepoint</td>
+<td class="gt_row gt_center" headers="stat_1_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Spring 2023</td>
+<td class="gt_row gt_center" headers="stat_1_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">608 (61%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">646 (62%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Winter 2024</td>
+<td class="gt_row gt_center" headers="stat_1_1">303 (70%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">338 (70%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Fall 2024</td>
+<td class="gt_row gt_center" headers="stat_1_1">132 (30%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">148 (30%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">36 (100%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">392 (39%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">404 (38%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Administration Format</td>
+<td class="gt_row gt_center" headers="stat_1_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;CAT</td>
+<td class="gt_row gt_center" headers="stat_1_1">132 (30%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">148 (30%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">36 (100%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">392 (39%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">404 (38%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Forms</td>
+<td class="gt_row gt_center" headers="stat_1_1">303 (70%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">338 (70%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">608 (61%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">646 (62%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Race</td>
+<td class="gt_row gt_center" headers="stat_1_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;American/Alaskan Native</td>
+<td class="gt_row gt_center" headers="stat_1_1">14 (3.3%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">14 (2.9%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">35 (3.6%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">33 (3.2%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Asian</td>
+<td class="gt_row gt_center" headers="stat_1_1">49 (11%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">60 (12%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">18 (1.9%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">18 (1.8%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black/African American</td>
+<td class="gt_row gt_center" headers="stat_1_1">66 (15%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">81 (17%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">9 (0.9%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">7 (0.7%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not reported</td>
+<td class="gt_row gt_center" headers="stat_1_1">60 (14%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">66 (14%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">458 (47%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">517 (51%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
+<td class="gt_row gt_center" headers="stat_1_1">105 (24%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">73 (15%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">8 (100%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">170 (18%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">117 (12%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
+<td class="gt_row gt_center" headers="stat_1_1">135 (31%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">189 (39%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">277 (29%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">325 (32%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_1_1">6</td>
+<td class="gt_row gt_center" headers="stat_2_1">3</td>
+<td class="gt_row gt_center" headers="stat_3_1">28</td>
+<td class="gt_row gt_center" headers="stat_1_2">33</td>
+<td class="gt_row gt_center" headers="stat_2_2">33</td>
+<td class="gt_row gt_center" headers="stat_3_2">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Ethnicity</td>
+<td class="gt_row gt_center" headers="stat_1_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic/Latin(o/a)</td>
+<td class="gt_row gt_center" headers="stat_1_1">194 (48%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">233 (49%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">847 (97%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">939 (97%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Intentional nonreport</td>
+<td class="gt_row gt_center" headers="stat_1_1">6 (1.5%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">1 (0.2%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">2 (0.2%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">2 (0.2%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not Hispanic/Latin(o/a)</td>
+<td class="gt_row gt_center" headers="stat_1_1">204 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">246 (51%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">20 (2.3%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">28 (2.9%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_1_1">31</td>
+<td class="gt_row gt_center" headers="stat_2_1">6</td>
+<td class="gt_row gt_center" headers="stat_3_1">36</td>
+<td class="gt_row gt_center" headers="stat_1_2">131</td>
+<td class="gt_row gt_center" headers="stat_2_2">81</td>
+<td class="gt_row gt_center" headers="stat_3_2">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Gender</td>
+<td class="gt_row gt_center" headers="stat_1_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
+<td class="gt_row gt_center" headers="stat_1_1">209 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">234 (48%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">2 (25%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">462 (53%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">553 (59%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
+<td class="gt_row gt_center" headers="stat_1_1">212 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">249 (52%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">6 (75%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">407 (47%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">388 (41%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_1_1">14</td>
+<td class="gt_row gt_center" headers="stat_2_1">3</td>
+<td class="gt_row gt_center" headers="stat_3_1">28</td>
+<td class="gt_row gt_center" headers="stat_1_2">131</td>
+<td class="gt_row gt_center" headers="stat_2_2">109</td>
+<td class="gt_row gt_center" headers="stat_3_2">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Home Language</td>
+<td class="gt_row gt_center" headers="stat_1_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_2"><br>
+</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English</td>
+<td class="gt_row gt_center" headers="stat_1_1">318 (76%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">378 (79%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">8 (100%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">75 (7.8%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">73 (7.2%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Spanish</td>
+<td class="gt_row gt_center" headers="stat_1_1">66 (16%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">73 (15%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">876 (91%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">935 (92%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
+<td class="gt_row gt_center" headers="stat_1_1">37 (8.8%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">28 (5.8%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">16 (1.7%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">7 (0.7%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_1_1">14</td>
+<td class="gt_row gt_center" headers="stat_2_1">7</td>
+<td class="gt_row gt_center" headers="stat_3_1">28</td>
+<td class="gt_row gt_center" headers="stat_1_2">33</td>
+<td class="gt_row gt_center" headers="stat_2_2">35</td>
+<td class="gt_row gt_center" headers="stat_3_2">0</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">English Proficiency Label</td>
+<td class="gt_row gt_center" headers="stat_1_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_1"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_1_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_2_2"><br>
+</td>
+<td class="gt_row gt_center" headers="stat_3_2"><br>
+</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;(Re-)Classified Proficient</td>
+<td class="gt_row gt_center" headers="stat_1_1">14 (4.0%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">32 (7.1%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">72 (8.7%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">94 (10%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English Learner</td>
+<td class="gt_row gt_center" headers="stat_1_1">76 (22%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">70 (16%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">696 (84%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">760 (83%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English-only</td>
+<td class="gt_row gt_center" headers="stat_1_1">259 (74%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">348 (77%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">8 (100%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">57 (6.9%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">61 (6.7%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_1_1">86</td>
+<td class="gt_row gt_center" headers="stat_2_1">36</td>
+<td class="gt_row gt_center" headers="stat_3_1">28</td>
+<td class="gt_row gt_center" headers="stat_1_2">175</td>
+<td class="gt_row gt_center" headers="stat_2_2">135</td>
+<td class="gt_row gt_center" headers="stat_3_2">0</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Ever IEP/504</td>
+<td class="gt_row gt_center" headers="stat_1_1">24 (7.8%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">49 (13%)</td>
+<td class="gt_row gt_center" headers="stat_3_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">62 (10%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">54 (9.9%)</td>
+<td class="gt_row gt_center" headers="stat_3_2">0 (NA%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_1_1">127</td>
+<td class="gt_row gt_center" headers="stat_2_1">96</td>
+<td class="gt_row gt_center" headers="stat_3_1">36</td>
+<td class="gt_row gt_center" headers="stat_1_2">394</td>
+<td class="gt_row gt_center" headers="stat_2_2">507</td>
+<td class="gt_row gt_center" headers="stat_3_2">0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="psychometric-analysis" class="level2" data-number="21.7">
+<h2 data-number="21.7" class="anchored" data-anchor-id="psychometric-analysis"><span class="header-section-number">21.7</span> Psychometric Analysis</h2>
+<section id="basic-item-statistics" class="level3" data-number="21.7.1">
+<h3 data-number="21.7.1" class="anchored" data-anchor-id="basic-item-statistics"><span class="header-section-number">21.7.1</span> Basic Item Statistics</h3>
+<p>We excluded 0 items from the English task and 0 items from the Spanish task based on low response counts (<em>n</em> &lt; 90). 0 items were excluded because they had no variance in the Spanish task, and 0 items in the English task. Additionally, we excluded 11 items from the English task and 6 items from the Spanish task based on low point-biserial correlations (<em>r</em> &lt; 0.2). <a href="#tbl-basic-item-stats-smt" class="quarto-xref">Table&nbsp;<span>21.2</span></a> summarizes the basic item characteristics, <a href="#fig-pbis-prop-correct-smt" class="quarto-xref">Figure&nbsp;<span>21.1</span></a> shows the relationship between point-biserial correlations and the proportion of correct responses for each item.</p>
+<div class="cell" data-tbl-width="100%">
+<div id="tbl-basic-item-stats-smt" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-width="100%">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-basic-item-stats-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;21.2: Basic Item Statistics Before and After Application of Exclusion Criteria, for the English and Spanish Semantic Mapping Tasks
+</figcaption>
+<div aria-describedby="tbl-basic-item-stats-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<div id="xmzjhmjdci" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#xmzjhmjdci table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#xmzjhmjdci thead, #xmzjhmjdci tbody, #xmzjhmjdci tfoot, #xmzjhmjdci tr, #xmzjhmjdci td, #xmzjhmjdci th {
+  border-style: none;
+}
+
+#xmzjhmjdci p {
+  margin: 0;
+  padding: 0;
+}
+
+#xmzjhmjdci .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#xmzjhmjdci .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#xmzjhmjdci .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#xmzjhmjdci .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#xmzjhmjdci .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#xmzjhmjdci .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#xmzjhmjdci .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#xmzjhmjdci .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#xmzjhmjdci .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#xmzjhmjdci .gt_group_heading {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#xmzjhmjdci .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#xmzjhmjdci .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#xmzjhmjdci .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#xmzjhmjdci .gt_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#xmzjhmjdci .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xmzjhmjdci .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#xmzjhmjdci .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#xmzjhmjdci .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#xmzjhmjdci .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xmzjhmjdci .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#xmzjhmjdci .gt_last_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xmzjhmjdci .gt_first_grand_summary_row {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_last_grand_summary_row_top {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#xmzjhmjdci .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xmzjhmjdci .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#xmzjhmjdci .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#xmzjhmjdci .gt_left {
+  text-align: left;
+}
+
+#xmzjhmjdci .gt_center {
+  text-align: center;
+}
+
+#xmzjhmjdci .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#xmzjhmjdci .gt_font_normal {
+  font-weight: normal;
+}
+
+#xmzjhmjdci .gt_font_bold {
+  font-weight: bold;
+}
+
+#xmzjhmjdci .gt_font_italic {
+  font-style: italic;
+}
+
+#xmzjhmjdci .gt_super {
+  font-size: 65%;
+}
+
+#xmzjhmjdci .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#xmzjhmjdci .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#xmzjhmjdci .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#xmzjhmjdci .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#xmzjhmjdci .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#xmzjhmjdci .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#xmzjhmjdci .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#xmzjhmjdci .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#xmzjhmjdci div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table do-not-create-environment cell caption-top table table-sm table-striped small" data-quarto-bootstrap="false">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="gt_col_headings gt_spanner_row header">
+<th class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"></th>
+<th colspan="2" id="English" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+English
+</div></th>
+<th colspan="2" id="Spanish" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="colgroup"><div class="gt_column_spanner">
+Spanish
+</div></th>
+</tr>
+<tr class="gt_col_headings gt_spanner_row even">
+<th rowspan="2" id="label" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>Characteristic</strong></th>
+<th id="level 1; stat_0_3" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"><div class="gt_column_spanner">
+Before Excl.
+</div></th>
+<th id="level 1; stat_0_4" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"><div class="gt_column_spanner">
+After Excl.
+</div></th>
+<th id="level 1; stat_0_3" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"><div class="gt_column_spanner">
+Before Excl.
+</div></th>
+<th id="level 1; stat_0_4" class="gt_center gt_columns_top_border gt_column_spanner_outer" data-quarto-table-cell-role="th" scope="col"><div class="gt_column_spanner">
+After Excl.
+</div></th>
+</tr>
+<tr class="gt_col_headings header">
+<th id="stat_0_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 124</strong></th>
+<th id="stat_0_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 113</strong></th>
+<th id="stat_0_3" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 124</strong></th>
+<th id="stat_0_4" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 118</strong></th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">No. of Responses</td>
+<td class="gt_row gt_center" headers="stat_0_1">124 (91)</td>
+<td class="gt_row gt_center" headers="stat_0_2">130 (93)</td>
+<td class="gt_row gt_center" headers="stat_0_3">249 (162)</td>
+<td class="gt_row gt_center" headers="stat_0_4">256 (163)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Proportion Correct</td>
+<td class="gt_row gt_center" headers="stat_0_1">0.67 (0.22)</td>
+<td class="gt_row gt_center" headers="stat_0_2">0.71 (0.18)</td>
+<td class="gt_row gt_center" headers="stat_0_3">0.64 (0.20)</td>
+<td class="gt_row gt_center" headers="stat_0_4">0.66 (0.19)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Point-biserial Correlation</td>
+<td class="gt_row gt_center" headers="stat_0_1">0.44 (0.18)</td>
+<td class="gt_row gt_center" headers="stat_0_2">0.48 (0.14)</td>
+<td class="gt_row gt_center" headers="stat_0_3">0.48 (0.17)</td>
+<td class="gt_row gt_center" headers="stat_0_4">0.50 (0.15)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Excluded (n &lt; 90)</td>
+<td class="gt_row gt_center" headers="stat_0_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_0_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_0_4">0 (0%)</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="label">Excluded (pbis &lt; .2)</td>
+<td class="gt_row gt_center" headers="stat_0_1">11 (8.9%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_0_3">6 (4.8%)</td>
+<td class="gt_row gt_center" headers="stat_0_4">0 (0%)</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="label">Excluded (no variation)</td>
+<td class="gt_row gt_center" headers="stat_0_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_0_2">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_0_3">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_0_4">0 (0%)</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-pbis-prop-correct-smt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pbis-prop-correct-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="smt_files/figure-html/fig-pbis-prop-correct-smt-1.png" class="img-fluid figure-img" width="2100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pbis-prop-correct-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.1: Scatterplot Showing Point-biserial (Item-total) Correlations and Proportion of Correct Responses for the English (Panel A) and Spanish (Panel B) Semantic Mapping Tasks
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="rasch-analysis" class="level3" data-number="21.7.2">
+<h3 data-number="21.7.2" class="anchored" data-anchor-id="rasch-analysis"><span class="header-section-number">21.7.2</span> Rasch Analysis</h3>
+<section id="item-location-estimates" class="level4" data-number="21.7.2.1">
+<h4 data-number="21.7.2.1" class="anchored" data-anchor-id="item-location-estimates"><span class="header-section-number">21.7.2.1</span> Item Location Estimates</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-item-loc-smt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-item-loc-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="smt_files/figure-html/fig-item-loc-smt-1.png" class="img-fluid figure-img" width="2100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-item-loc-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.2: Scatterplot Showing Item Location and Proportion of Correct Response for the English (Panel A) and Spanish (Panel B) Semantic Mapping Tasks
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="item-fit-statistics" class="level4" data-number="21.7.2.2">
+<h4 data-number="21.7.2.2" class="anchored" data-anchor-id="item-fit-statistics"><span class="header-section-number">21.7.2.2</span> Item Fit Statistics</h4>
+<div class="cell">
+<div id="tbl-item-fit-smt" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-item-fit-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;21.3: Frequencies of Item Misfit Categories Based on Infit/Outfit MSE Values for the English and Spanish Semantic Mapping Tasks
+</figcaption>
+<div aria-describedby="tbl-item-fit-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="5" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+English
+</div></th>
+<th colspan="5" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Spanish
+</div></th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="10" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Infit MSE
+</div></th>
+</tr>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">A</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">B</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">C</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">D</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">A</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">B</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">C</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">D</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Outfit MSE</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: center;">91</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">91</td>
+<td style="text-align: center;">103</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">103</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: center;">113</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">113</td>
+<td style="text-align: center;">118</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">118</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="person-location-estimates" class="level4" data-number="21.7.2.3">
+<h4 data-number="21.7.2.3" class="anchored" data-anchor-id="person-location-estimates"><span class="header-section-number">21.7.2.3</span> Person Location Estimates</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-person-loc-smt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-person-loc-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="smt_files/figure-html/fig-person-loc-smt-1.png" class="img-fluid figure-img" width="2100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-person-loc-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.3: Scatterplot Showing Person Location Estimates (Obtained using the MLE method) and the Proportion of Correct Responess for English and Spanish Semantic Mapping Tasks
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="person-fit-statistics" class="level4" data-number="21.7.2.4">
+<h4 data-number="21.7.2.4" class="anchored" data-anchor-id="person-fit-statistics"><span class="header-section-number">21.7.2.4</span> Person Fit Statistics</h4>
+<div class="cell">
+<div id="tbl-person-fit-smt" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-person-fit-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;21.4: Frequencies of Person Misfit Categories Based on Infit/Outfit MSE Values for the English (Panel A) and Spanish (Panel B) Semantic Mapping Tasks
+</figcaption>
+<div aria-describedby="tbl-person-fit-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="5" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+English
+</div></th>
+<th colspan="5" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Spanish
+</div></th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="10" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Infit MSE
+</div></th>
+</tr>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">A</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">B</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">C</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">D</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">A</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">B</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">C</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">D</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Outfit MSE</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A</td>
+<td style="text-align: center;">640</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">640</td>
+<td style="text-align: center;">1,396</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1,400</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B</td>
+<td style="text-align: center;">156</td>
+<td style="text-align: center;">89</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">245</td>
+<td style="text-align: center;">269</td>
+<td style="text-align: center;">155</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">424</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C</td>
+<td style="text-align: center;">23</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">28</td>
+<td style="text-align: center;">86</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">99</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">32</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Total</td>
+<td style="text-align: center;">827</td>
+<td style="text-align: center;">89</td>
+<td style="text-align: center;">13</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">933</td>
+<td style="text-align: center;">1,771</td>
+<td style="text-align: center;">155</td>
+<td style="text-align: center;">27</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">1,955</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="distribution-of-theta-estimates" class="level4" data-number="21.7.2.5">
+<h4 data-number="21.7.2.5" class="anchored" data-anchor-id="distribution-of-theta-estimates"><span class="header-section-number">21.7.2.5</span> Distribution of Theta Estimates</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-theta-dist-smt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-theta-dist-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="smt_files/figure-html/fig-theta-dist-smt-1.png" class="img-fluid figure-img" width="2100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-theta-dist-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.4: Distribution of Theta Estimates for the English and Spanish Semantic Mapping Tasks
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="wright-maps" class="level4" data-number="21.7.2.6">
+<h4 data-number="21.7.2.6" class="anchored" data-anchor-id="wright-maps"><span class="header-section-number">21.7.2.6</span> Wright Maps</h4>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-wright-map-en-smt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wright-map-en-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="smt_files/figure-html/fig-wright-map-en-smt-1.png" class="img-fluid figure-img" width="2100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wright-map-en-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.5: Wright Maps Showing the Relationship Between Item and Person Location Estimates for the English Semantic Mapping Task
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-wright-map-es-smt" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-wright-map-es-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="smt_files/figure-html/fig-wright-map-es-smt-1.png" class="img-fluid figure-img" width="2100">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-wright-map-es-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;21.6: Wright Maps Showing the Relationship Between Item and Person Location Estimates for the Spanish Semantic Mapping Task
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="model-summary" class="level4" data-number="21.7.2.7">
+<h4 data-number="21.7.2.7" class="anchored" data-anchor-id="model-summary"><span class="header-section-number">21.7.2.7</span> Model Summary</h4>
+<div class="cell">
+<div id="tbl-rasch-summary-smt" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-rasch-summary-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;21.5: Summary of Rasch Model Statistics for the English and Spanish Semantic Mapping Tasks
+</figcaption>
+<div aria-describedby="tbl-rasch-summary-smt-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table do-not-create-environment cell caption-top table-sm table-striped small">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+English
+</div></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Spanish
+</div></th>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Item
+</div></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Person
+</div></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Item
+</div></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Person
+</div></th>
+</tr>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Characteristic</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 113</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 933</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 118</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 1,955</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Logit Scale Location</td>
+<td style="text-align: center;">-1.49 (1.30)</td>
+<td style="text-align: center;">0.16 (-0.74, 0.98)</td>
+<td style="text-align: center;">-1.06 (1.28)</td>
+<td style="text-align: center;">0.27 (-0.84, 1.05)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Outfit</td>
+<td style="text-align: center;">0.93 (0.36)</td>
+<td style="text-align: center;">0.79 (0.49, 1.00)</td>
+<td style="text-align: center;">0.95 (0.32)</td>
+<td style="text-align: center;">0.83 (0.54, 1.04)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Infit</td>
+<td style="text-align: center;">0.97 (0.14)</td>
+<td style="text-align: center;">0.88 (0.73, 1.04)</td>
+<td style="text-align: center;">0.97 (0.15)</td>
+<td style="text-align: center;">0.89 (0.75, 1.05)</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Reliability of Separation</td>
+<td style="text-align: center;">0.7647</td>
+<td style="text-align: center;">0.6828</td>
+<td style="text-align: center;">0.7908</td>
+<td style="text-align: center;">0.7474</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="final-number-of-items" class="level5" data-number="21.7.2.7.1">
+<h5 data-number="21.7.2.7.1" class="anchored" data-anchor-id="final-number-of-items"><span class="header-section-number">21.7.2.7.1</span> Final Number of Items</h5>
+<p>Following the exclusion of items with point-biserial correlations &lt; .20 and items with poor fit statistics, the final versions of the task contain 113 and 118 for the English and Spanish task, respectively.</p>
+</section>
+</section>
+</section>
+</section>
+<section id="criterion-validity-evidence" class="level2" data-number="21.8">
+<h2 data-number="21.8" class="anchored" data-anchor-id="criterion-validity-evidence"><span class="header-section-number">21.8</span> Criterion Validity Evidence</h2>
+<section id="sample" class="level3" data-number="21.8.1">
+<h3 data-number="21.8.1" class="anchored" data-anchor-id="sample"><span class="header-section-number">21.8.1</span> Sample</h3>
+<p>Forthcoming.</p>
+<!-- Semantic Mapping English was correlated with the Receptive One-Word Picture Vocabulary Test, 4th Edition [@Martin2011]. -->
+<!-- Semantic Mapping Spanish was correlated with the Receptive One-Word Picture Vocabulary Test, 4th Edition, Bilingual Edition [@Martin2013] test. -->
+<p>#| label: tbl-criterion-validity-smt #| tbl-cap: “Concurrent Criterion Validity Correlations for the English and Spanish Semantic Mapping Tasks” tbl.critval &lt;- fun.criterion_validity_table(“SMT”) tbl.critval ``</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-Jasso2020" class="csl-entry" role="listitem">
+Jasso, J., S. McMillen, J. B. Anaya, L. M. Bedore, and E. D. Peña. 2020. <span>“The Utility of an English Semantics Measure for Identifying Developmental Language Disorder in Spanish–English Bilinguals.”</span> <em>American Journal of Speech-Language Pathology</em> 29 (2): 776–88.
+</div>
+<div id="ref-Kim2023" class="csl-entry" role="listitem">
+Kim, Y.-S. 2023. <span>“Dimensionality of Comprehension and Retell of Narrative and Informational Texts, and the Relations of Language and Cognitive Skills to Identified Dimensions.”</span> <em>Child Development</em> 94: e246–63.
+</div>
+<div id="ref-Mcgregor2013" class="csl-entry" role="listitem">
+McGregor, K. K., J. Oleson, A. Bahnsen, and D. Duff. 2013. <span>“Children with Developmental Language Impairment Have Vocabulary Deficits Characterized by Limited Breadth and Depth.”</span> <em>International Journal of Language &amp; Communication Disorders</em> 48 (3): 307–19.
+</div>
+</div>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./rano.html" class="pagination-link" aria-label="Rapid Automatized Naming of Objects">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Rapid Automatized Naming of Objects</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./spe.html" class="pagination-link" aria-label="Spelling">
+        <span class="nav-page-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Spelling</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
