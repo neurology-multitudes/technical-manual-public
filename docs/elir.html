@@ -93,6 +93,35 @@ div.csl-indent {
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="resources/custom.css">
 </head>
@@ -373,6 +402,7 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#basic-item-statistics" id="toc-basic-item-statistics" class="nav-link" data-scroll-target="#basic-item-statistics"><span class="header-section-number">10.6.1</span> Basic Item Statistics</a></li>
   <li><a href="#rasch-analysis" id="toc-rasch-analysis" class="nav-link" data-scroll-target="#rasch-analysis"><span class="header-section-number">10.6.2</span> Rasch Analysis</a></li>
+  <li><a href="#final-number-of-items" id="toc-final-number-of-items" class="nav-link" data-scroll-target="#final-number-of-items"><span class="header-section-number">10.6.3</span> Final Number of Items</a></li>
   </ul></li>
   <li><a href="#criterion-validity-evidence" id="toc-criterion-validity-evidence" class="nav-link" data-scroll-target="#criterion-validity-evidence"><span class="header-section-number">10.7</span> Criterion Validity Evidence</a>
   <ul class="collapse">
@@ -940,13 +970,13 @@ Table&nbsp;10.1: Demographic Characteristics of Calibration Samples for the Engl
 </tr>
 <tr class="gt_col_headings even">
 <th id="stat_1_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>K</strong><br>
-N = 2,306</th>
+N = 72,267</th>
 <th id="stat_2_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G1</strong><br>
-N = 668</th>
+N = 0</th>
 <th id="stat_1_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>K</strong><br>
-N = 1,140</th>
+N = 9,167</th>
 <th id="stat_2_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G1</strong><br>
-N = 650</th>
+N = 639</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -962,50 +992,32 @@ N = 650</th>
 </td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Spring 2023</td>
-<td class="gt_row gt_center" headers="stat_1_1">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">0 (0%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">606 (53%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">644 (99%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;AY 2023/24</td>
+<td class="gt_row gt_center" headers="stat_1_1">743 (1.0%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">419 (4.6%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">0 (0%)</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Fall 2023</td>
-<td class="gt_row gt_center" headers="stat_1_1">605 (26%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">660 (99%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">0 (0%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;AY 2024/25</td>
+<td class="gt_row gt_center" headers="stat_1_1">2,172 (3.0%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">697 (7.6%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">0 (0%)</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Fall 2024</td>
-<td class="gt_row gt_center" headers="stat_1_1">1,701 (74%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">8 (1.2%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">534 (47%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">6 (0.9%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;AY 2025/26</td>
+<td class="gt_row gt_center" headers="stat_1_1">69,352 (96%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">7,450 (81%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">0 (0%)</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="label">Administration Format</td>
-<td class="gt_row gt_center" headers="stat_1_1"><br>
-</td>
-<td class="gt_row gt_center" headers="stat_2_1"><br>
-</td>
-<td class="gt_row gt_center" headers="stat_1_2"><br>
-</td>
-<td class="gt_row gt_center" headers="stat_2_2"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;CAT</td>
-<td class="gt_row gt_center" headers="stat_1_1">1,701 (74%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">8 (1.2%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">534 (47%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">6 (0.9%)</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Forms</td>
-<td class="gt_row gt_center" headers="stat_1_1">605 (26%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">660 (99%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">606 (53%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">644 (99%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
+<td class="gt_row gt_center" headers="stat_1_1">0 (0%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">601 (6.6%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">639 (100%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">Race</td>
@@ -1020,52 +1032,52 @@ N = 650</th>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;American/Alaskan Native</td>
-<td class="gt_row gt_center" headers="stat_1_1">88 (4.1%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">12 (1.8%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">38 (3.4%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">110 (4.2%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">47 (2.9%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">8 (1.3%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Asian</td>
-<td class="gt_row gt_center" headers="stat_1_1">154 (7.1%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">86 (13%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">21 (1.9%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">7 (1.1%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">195 (7.4%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">42 (2.6%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">6 (1.0%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black/African American</td>
-<td class="gt_row gt_center" headers="stat_1_1">203 (9.4%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">78 (12%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">11 (1.0%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">4 (0.6%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">253 (9.5%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">16 (1.0%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">4 (0.7%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not reported</td>
-<td class="gt_row gt_center" headers="stat_1_1">259 (12%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">127 (19%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">462 (42%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">385 (62%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">308 (12%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">722 (45%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">380 (62%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_1_1">521 (24%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">76 (11%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">226 (20%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">52 (8.4%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">567 (21%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">300 (19%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">51 (8.3%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td class="gt_row gt_center" headers="stat_1_1">944 (44%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">288 (43%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">347 (31%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">164 (26%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">1,217 (46%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">491 (30%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">162 (27%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">137</td>
-<td class="gt_row gt_center" headers="stat_2_1">1</td>
-<td class="gt_row gt_center" headers="stat_1_2">35</td>
-<td class="gt_row gt_center" headers="stat_2_2">30</td>
+<td class="gt_row gt_center" headers="stat_1_1">69,617</td>
+<td class="gt_row gt_center" headers="stat_2_1">0</td>
+<td class="gt_row gt_center" headers="stat_1_2">7,549</td>
+<td class="gt_row gt_center" headers="stat_2_2">28</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">Ethnicity</td>
@@ -1080,31 +1092,31 @@ N = 650</th>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic/Latin(o/a)</td>
-<td class="gt_row gt_center" headers="stat_1_1">1,388 (70%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">347 (52%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">954 (97%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">559 (96%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">1,753 (71%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">1,433 (96%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">550 (96%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Intentional nonreport</td>
-<td class="gt_row gt_center" headers="stat_1_1">19 (1.0%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">3 (0.4%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">3 (0.3%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">22 (0.9%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">4 (0.3%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">1 (0.2%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not Hispanic/Latin(o/a)</td>
-<td class="gt_row gt_center" headers="stat_1_1">563 (29%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">317 (48%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">23 (2.3%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">20 (3.4%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">677 (28%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">51 (3.4%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">22 (3.8%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">336</td>
-<td class="gt_row gt_center" headers="stat_2_1">1</td>
-<td class="gt_row gt_center" headers="stat_1_2">160</td>
-<td class="gt_row gt_center" headers="stat_2_2">70</td>
+<td class="gt_row gt_center" headers="stat_1_1">69,815</td>
+<td class="gt_row gt_center" headers="stat_2_1">0</td>
+<td class="gt_row gt_center" headers="stat_1_2">7,679</td>
+<td class="gt_row gt_center" headers="stat_2_2">66</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">Gender</td>
@@ -1119,24 +1131,24 @@ N = 650</th>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
-<td class="gt_row gt_center" headers="stat_1_1">997 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">315 (47%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">520 (53%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">346 (60%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">1,241 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">800 (54%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">343 (60%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
-<td class="gt_row gt_center" headers="stat_1_1">997 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">352 (53%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">459 (47%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">234 (40%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">1,234 (50%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">690 (46%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">230 (40%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">312</td>
-<td class="gt_row gt_center" headers="stat_2_1">1</td>
-<td class="gt_row gt_center" headers="stat_1_2">161</td>
-<td class="gt_row gt_center" headers="stat_2_2">70</td>
+<td class="gt_row gt_center" headers="stat_1_1">69,792</td>
+<td class="gt_row gt_center" headers="stat_2_1">0</td>
+<td class="gt_row gt_center" headers="stat_1_2">7,677</td>
+<td class="gt_row gt_center" headers="stat_2_2">66</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">Home Language</td>
@@ -1151,31 +1163,31 @@ N = 650</th>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English</td>
-<td class="gt_row gt_center" headers="stat_1_1">1,277 (63%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">490 (74%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">113 (10%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">72 (12%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">1,573 (63%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">196 (12%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">71 (12%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Spanish</td>
-<td class="gt_row gt_center" headers="stat_1_1">671 (33%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">105 (16%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">975 (88%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">539 (87%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">815 (33%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">1,391 (87%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">531 (87%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_1_1">82 (4.0%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">70 (11%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">16 (1.4%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">90 (3.6%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">21 (1.3%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">7 (1.1%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">276</td>
-<td class="gt_row gt_center" headers="stat_2_1">3</td>
-<td class="gt_row gt_center" headers="stat_1_2">36</td>
-<td class="gt_row gt_center" headers="stat_2_2">32</td>
+<td class="gt_row gt_center" headers="stat_1_1">69,789</td>
+<td class="gt_row gt_center" headers="stat_2_1">0</td>
+<td class="gt_row gt_center" headers="stat_1_2">7,559</td>
+<td class="gt_row gt_center" headers="stat_2_2">30</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">English Proficiency Label</td>
@@ -1190,45 +1202,45 @@ N = 650</th>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;(Re-)Classified Proficient</td>
-<td class="gt_row gt_center" headers="stat_1_1">76 (4.1%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">62 (9.5%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">72 (7.6%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">49 (8.8%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">82 (3.6%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">122 (8.6%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">49 (9.0%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English Learner</td>
-<td class="gt_row gt_center" headers="stat_1_1">606 (33%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">123 (19%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">789 (84%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">451 (81%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">743 (33%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">1,155 (81%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">438 (80%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English-only</td>
-<td class="gt_row gt_center" headers="stat_1_1">1,161 (63%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">471 (72%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">83 (8.8%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">59 (11%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">1,453 (64%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">143 (10%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">58 (11%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">463</td>
-<td class="gt_row gt_center" headers="stat_2_1">12</td>
-<td class="gt_row gt_center" headers="stat_1_2">196</td>
-<td class="gt_row gt_center" headers="stat_2_2">91</td>
+<td class="gt_row gt_center" headers="stat_1_1">69,989</td>
+<td class="gt_row gt_center" headers="stat_2_1">0</td>
+<td class="gt_row gt_center" headers="stat_1_2">7,747</td>
+<td class="gt_row gt_center" headers="stat_2_2">94</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">Ever IEP/504</td>
-<td class="gt_row gt_center" headers="stat_1_1">123 (7.8%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">64 (11%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">71 (10.0%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">25 (13%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">177 (8.9%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">0 (NA%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">112 (9.8%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">24 (12%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">725</td>
-<td class="gt_row gt_center" headers="stat_2_1">106</td>
-<td class="gt_row gt_center" headers="stat_1_2">427</td>
-<td class="gt_row gt_center" headers="stat_2_2">452</td>
+<td class="gt_row gt_center" headers="stat_1_1">70,267</td>
+<td class="gt_row gt_center" headers="stat_2_1">0</td>
+<td class="gt_row gt_center" headers="stat_1_2">8,024</td>
+<td class="gt_row gt_center" headers="stat_2_2">441</td>
 </tr>
 </tbody>
 </table>
@@ -1244,7 +1256,7 @@ N = 650</th>
 <h2 data-number="10.6" class="anchored" data-anchor-id="psychometric-analysis"><span class="header-section-number">10.6</span> Psychometric Analysis</h2>
 <section id="basic-item-statistics" class="level3" data-number="10.6.1">
 <h3 data-number="10.6.1" class="anchored" data-anchor-id="basic-item-statistics"><span class="header-section-number">10.6.1</span> Basic Item Statistics</h3>
-<p>We excluded 0 items from the English task and 0 items from the Spanish task based on low response counts (<em>n</em> &lt; 90). 0 items were excluded because they had no variance in the Spanish task, and 0 items in the English task. Additionally, we excluded 0 items from the English task and 0 items from the Spanish task based on low point-biserial correlations (<em>r</em> &lt; 0.2). <a href="#tbl-basic-item-stats-elir" class="quarto-xref">Table&nbsp;<span>10.2</span></a> summarizes the basic item characteristics, <a href="#fig-pbis-prop-correct-elir" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> shows the relationship between point-biserial correlations and the proportion of correct responses for each item.</p>
+<p>We excluded 0 items from the English task and 0 items from the Spanish task based on low response counts (<em>n</em> &lt; 100) prior to IRT calibration. 0 items were excluded because they had no variance in the Spanish task, and 0 items in the English task. Additionally, we excluded 0 items from the English task and 0 items from the Spanish task based on low point-biserial correlations (<em>r</em> &lt; 0.2). <a href="#tbl-basic-item-stats-elir" class="quarto-xref">Table&nbsp;<span>10.2</span></a> summarizes the basic item characteristics, <a href="#fig-pbis-prop-correct-elir" class="quarto-xref">Figure&nbsp;<span>10.1</span></a> shows the relationship between point-biserial correlations and the proportion of correct responses for each item.</p>
 <div class="cell" data-tbl-width="100%">
 <div id="tbl-basic-item-stats-elir" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-tbl-width="100%">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1737,36 +1749,36 @@ After Excl.
 </div></th>
 </tr>
 <tr class="gt_col_headings header">
-<th id="stat_0_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 59</strong></th>
-<th id="stat_0_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 59</strong></th>
-<th id="stat_0_3" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 62</strong></th>
-<th id="stat_0_4" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 62</strong></th>
+<th id="stat_0_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 93</strong></th>
+<th id="stat_0_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 93</strong></th>
+<th id="stat_0_3" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 75</strong></th>
+<th id="stat_0_4" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>N = 75</strong></th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">No. of Responses</td>
-<td class="gt_row gt_center" headers="stat_0_1">636 (768)</td>
-<td class="gt_row gt_center" headers="stat_0_2">636 (768)</td>
-<td class="gt_row gt_center" headers="stat_0_3">274 (158)</td>
-<td class="gt_row gt_center" headers="stat_0_4">274 (158)</td>
+<td class="gt_row gt_center" headers="stat_0_1">10,067 (13,437)</td>
+<td class="gt_row gt_center" headers="stat_0_2">10,067 (13,437)</td>
+<td class="gt_row gt_center" headers="stat_0_3">1,548 (1,276)</td>
+<td class="gt_row gt_center" headers="stat_0_4">1,548 (1,276)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">Proportion Correct</td>
-<td class="gt_row gt_center" headers="stat_0_1">0.75 (0.12)</td>
-<td class="gt_row gt_center" headers="stat_0_2">0.75 (0.12)</td>
-<td class="gt_row gt_center" headers="stat_0_3">0.57 (0.09)</td>
-<td class="gt_row gt_center" headers="stat_0_4">0.57 (0.09)</td>
+<td class="gt_row gt_center" headers="stat_0_1">0.50 (0.10)</td>
+<td class="gt_row gt_center" headers="stat_0_2">0.50 (0.10)</td>
+<td class="gt_row gt_center" headers="stat_0_3">0.50 (0.09)</td>
+<td class="gt_row gt_center" headers="stat_0_4">0.50 (0.09)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">Point-biserial Correlation</td>
-<td class="gt_row gt_center" headers="stat_0_1">0.50 (0.10)</td>
-<td class="gt_row gt_center" headers="stat_0_2">0.50 (0.10)</td>
-<td class="gt_row gt_center" headers="stat_0_3">0.54 (0.11)</td>
-<td class="gt_row gt_center" headers="stat_0_4">0.54 (0.11)</td>
+<td class="gt_row gt_center" headers="stat_0_1">0.46 (0.10)</td>
+<td class="gt_row gt_center" headers="stat_0_2">0.46 (0.10)</td>
+<td class="gt_row gt_center" headers="stat_0_3">0.45 (0.08)</td>
+<td class="gt_row gt_center" headers="stat_0_4">0.45 (0.08)</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">Excluded (n &lt; 90)</td>
+<td class="gt_row gt_left" headers="label">Excluded (n &lt; 100)</td>
 <td class="gt_row gt_center" headers="stat_0_1">0 (0%)</td>
 <td class="gt_row gt_center" headers="stat_0_2">0 (0%)</td>
 <td class="gt_row gt_center" headers="stat_0_3">0 (0%)</td>
@@ -1899,24 +1911,24 @@ Infit MSE
 </tr>
 <tr class="even">
 <td style="text-align: left;">A</td>
-<td style="text-align: center;">57</td>
+<td style="text-align: center;">93</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">57</td>
-<td style="text-align: center;">62</td>
+<td style="text-align: center;">93</td>
+<td style="text-align: center;">75</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">62</td>
+<td style="text-align: center;">75</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">B</td>
-<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -1925,11 +1937,11 @@ Infit MSE
 </tr>
 <tr class="even">
 <td style="text-align: left;">C</td>
-<td style="text-align: center;">1</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
@@ -1951,16 +1963,16 @@ Infit MSE
 </tr>
 <tr class="even">
 <td style="text-align: left;">Total</td>
-<td style="text-align: center;">59</td>
+<td style="text-align: center;">93</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">59</td>
-<td style="text-align: center;">62</td>
+<td style="text-align: center;">93</td>
+<td style="text-align: center;">75</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">62</td>
+<td style="text-align: center;">75</td>
 </tr>
 </tbody>
 </table>
@@ -2057,68 +2069,68 @@ Infit MSE
 </tr>
 <tr class="even">
 <td style="text-align: left;">A</td>
-<td style="text-align: center;">2,220</td>
+<td style="text-align: center;">67,499</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">2,220</td>
-<td style="text-align: center;">1,387</td>
+<td style="text-align: center;">67,499</td>
+<td style="text-align: center;">9,117</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">1,387</td>
+<td style="text-align: center;">9,117</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">B</td>
-<td style="text-align: center;">88</td>
-<td style="text-align: center;">566</td>
+<td style="text-align: center;">381</td>
+<td style="text-align: center;">3,890</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">654</td>
-<td style="text-align: center;">45</td>
-<td style="text-align: center;">231</td>
+<td style="text-align: center;">4,271</td>
+<td style="text-align: center;">85</td>
+<td style="text-align: center;">462</td>
 <td style="text-align: center;">0</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">276</td>
+<td style="text-align: center;">547</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">C</td>
-<td style="text-align: center;">39</td>
+<td style="text-align: center;">428</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">21</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">44</td>
-<td style="text-align: center;">48</td>
+<td style="text-align: center;">449</td>
+<td style="text-align: center;">76</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">7</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">55</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">76</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">D</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">7</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">2</td>
 <td style="text-align: center;">12</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">3</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">4</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">8</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Total</td>
-<td style="text-align: center;">2,352</td>
-<td style="text-align: center;">566</td>
-<td style="text-align: center;">11</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">2,930</td>
-<td style="text-align: center;">1,484</td>
-<td style="text-align: center;">231</td>
-<td style="text-align: center;">11</td>
+<td style="text-align: center;">68,315</td>
+<td style="text-align: center;">3,890</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">72,231</td>
+<td style="text-align: center;">9,281</td>
+<td style="text-align: center;">462</td>
 <td style="text-align: center;">0</td>
-<td style="text-align: center;">1,726</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">9,743</td>
 </tr>
 </tbody>
 </table>
@@ -2221,40 +2233,40 @@ Person
 </tr>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">Characteristic</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N = 59</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N = 2,930</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N = 62</th>
-<th style="text-align: center;" data-quarto-table-cell-role="th">N = 1,726</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 93</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 72,231</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 75</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">N = 9,743</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Logit Scale Location</td>
-<td style="text-align: center;">-1.51 (0.78)</td>
-<td style="text-align: center;">-0.09 (-0.80, 0.98)</td>
-<td style="text-align: center;">-0.48 (0.69)</td>
-<td style="text-align: center;">0.18 (-1.05, 0.97)</td>
+<td style="text-align: center;">-0.41 (0.64)</td>
+<td style="text-align: center;">-0.03 (-0.76, 0.76)</td>
+<td style="text-align: center;">-0.21 (0.54)</td>
+<td style="text-align: center;">0.03 (-0.74, 0.70)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Outfit</td>
-<td style="text-align: center;">0.94 (0.18)</td>
-<td style="text-align: center;">0.88 (0.56, 1.03)</td>
-<td style="text-align: center;">0.99 (0.17)</td>
-<td style="text-align: center;">0.86 (0.66, 1.01)</td>
+<td style="text-align: center;">0.98 (0.09)</td>
+<td style="text-align: center;">0.91 (0.81, 1.00)</td>
+<td style="text-align: center;">1.00 (0.10)</td>
+<td style="text-align: center;">0.91 (0.81, 1.01)</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Infit</td>
-<td style="text-align: center;">0.98 (0.08)</td>
-<td style="text-align: center;">0.90 (0.73, 1.01)</td>
-<td style="text-align: center;">0.99 (0.11)</td>
-<td style="text-align: center;">0.88 (0.74, 0.99)</td>
+<td style="text-align: center;">0.99 (0.06)</td>
+<td style="text-align: center;">0.92 (0.85, 1.00)</td>
+<td style="text-align: center;">1.00 (0.06)</td>
+<td style="text-align: center;">0.92 (0.85, 1.00)</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Reliability of Separation</td>
-<td style="text-align: center;">0.6754</td>
-<td style="text-align: center;">0.4677</td>
-<td style="text-align: center;">0.7243</td>
-<td style="text-align: center;">0.6226</td>
+<td style="text-align: center;">0.7388</td>
+<td style="text-align: center;">0.6974</td>
+<td style="text-align: center;">0.6729</td>
+<td style="text-align: center;">0.6376</td>
 </tr>
 </tbody>
 </table>
@@ -2263,11 +2275,17 @@ Person
 </figure>
 </div>
 </div>
-<section id="final-number-of-items" class="level5" data-number="10.6.2.7.1">
-<h5 data-number="10.6.2.7.1" class="anchored" data-anchor-id="final-number-of-items"><span class="header-section-number">10.6.2.7.1</span> Final Number of Items</h5>
-<p>Following the exclusion of items with point-biserial correlations &lt; .20 and items with poor fit statistics, the final versions of the task contain 59 and 62 for the English and Spanish task, respectively.</p>
 </section>
 </section>
+<section id="final-number-of-items" class="level3" data-number="10.6.3">
+<h3 data-number="10.6.3" class="anchored" data-anchor-id="final-number-of-items"><span class="header-section-number">10.6.3</span> Final Number of Items</h3>
+<p>Following the IRT calibration (before which we had already excluded all items with point-biserial correlations &lt; .20 and &lt; 100 responses), we applied the following additional item classification:</p>
+<ul>
+<li>Items with good fit statistics (infit or outfit <span class="math inline">\(\leq 1.5\)</span>) and a sufficiently large response count (<span class="math inline">\(\geq\)</span> 500 for English, <span class="math inline">\(\geq\)</span> 250 for Spanish) were retained as part of the final item pool.</li>
+<li>Items with poor fit statistics (infit or outfit <span class="math inline">\(&gt; 1.5\)</span>) and a sufficiently large (<span class="math inline">\(\geq\)</span> 500 for English, <span class="math inline">\(\geq\)</span> 250 for Spanish) response count were discarded.</li>
+<li>Items with lower response counts than specified above were kept as experimental items (meaning they will be administered as part of the task but will not influence the final score).</li>
+</ul>
+<p>Therefore, the English task currently has 92 operational and 1 experimental items, the Spanish task currently has 74 operational and 1 experimental items.</p>
 </section>
 </section>
 <section id="criterion-validity-evidence" class="level2" data-number="10.7">
@@ -2282,23 +2300,23 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
 </figcaption>
 <div aria-describedby="tbl-criterion-validity-sample-elir-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<div id="bfbuvurnuc" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bfbuvurnuc table {
+<div id="gfriucmnjs" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#gfriucmnjs table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bfbuvurnuc thead, #bfbuvurnuc tbody, #bfbuvurnuc tfoot, #bfbuvurnuc tr, #bfbuvurnuc td, #bfbuvurnuc th {
+#gfriucmnjs thead, #gfriucmnjs tbody, #gfriucmnjs tfoot, #gfriucmnjs tr, #gfriucmnjs td, #gfriucmnjs th {
   border-style: none;
 }
 
-#bfbuvurnuc p {
+#gfriucmnjs p {
   margin: 0;
   padding: 0;
 }
 
-#bfbuvurnuc .gt_table {
+#gfriucmnjs .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -2324,12 +2342,12 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-left-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_caption {
+#gfriucmnjs .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bfbuvurnuc .gt_title {
+#gfriucmnjs .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -2341,7 +2359,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-bottom-width: 0;
 }
 
-#bfbuvurnuc .gt_subtitle {
+#gfriucmnjs .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -2353,7 +2371,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-top-width: 0;
 }
 
-#bfbuvurnuc .gt_heading {
+#gfriucmnjs .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -2365,13 +2383,13 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-right-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_bottom_border {
+#gfriucmnjs .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_col_headings {
+#gfriucmnjs .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2386,7 +2404,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-right-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_col_heading {
+#gfriucmnjs .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2406,7 +2424,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   overflow-x: hidden;
 }
 
-#bfbuvurnuc .gt_column_spanner_outer {
+#gfriucmnjs .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2418,15 +2436,15 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   padding-right: 4px;
 }
 
-#bfbuvurnuc .gt_column_spanner_outer:first-child {
+#gfriucmnjs .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bfbuvurnuc .gt_column_spanner_outer:last-child {
+#gfriucmnjs .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bfbuvurnuc .gt_column_spanner {
+#gfriucmnjs .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2438,11 +2456,11 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   width: 100%;
 }
 
-#bfbuvurnuc .gt_spanner_row {
+#gfriucmnjs .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bfbuvurnuc .gt_group_heading {
+#gfriucmnjs .gt_group_heading {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2468,7 +2486,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   text-align: left;
 }
 
-#bfbuvurnuc .gt_empty_group_heading {
+#gfriucmnjs .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2483,15 +2501,15 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   vertical-align: middle;
 }
 
-#bfbuvurnuc .gt_from_md > :first-child {
+#gfriucmnjs .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bfbuvurnuc .gt_from_md > :last-child {
+#gfriucmnjs .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bfbuvurnuc .gt_row {
+#gfriucmnjs .gt_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2510,7 +2528,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   overflow-x: hidden;
 }
 
-#bfbuvurnuc .gt_stub {
+#gfriucmnjs .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2523,7 +2541,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   padding-right: 5px;
 }
 
-#bfbuvurnuc .gt_stub_row_group {
+#gfriucmnjs .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2537,15 +2555,15 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   vertical-align: top;
 }
 
-#bfbuvurnuc .gt_row_group_first td {
+#gfriucmnjs .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bfbuvurnuc .gt_row_group_first th {
+#gfriucmnjs .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bfbuvurnuc .gt_summary_row {
+#gfriucmnjs .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2555,16 +2573,16 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   padding-right: 5px;
 }
 
-#bfbuvurnuc .gt_first_summary_row {
+#gfriucmnjs .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_first_summary_row.thick {
+#gfriucmnjs .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bfbuvurnuc .gt_last_summary_row {
+#gfriucmnjs .gt_last_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2574,7 +2592,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-bottom-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_grand_summary_row {
+#gfriucmnjs .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2584,7 +2602,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   padding-right: 5px;
 }
 
-#bfbuvurnuc .gt_first_grand_summary_row {
+#gfriucmnjs .gt_first_grand_summary_row {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2594,7 +2612,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-top-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_last_grand_summary_row_top {
+#gfriucmnjs .gt_last_grand_summary_row_top {
   padding-top: 1px;
   padding-bottom: 1px;
   padding-left: 5px;
@@ -2604,11 +2622,11 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-bottom-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_striped {
+#gfriucmnjs .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bfbuvurnuc .gt_table_body {
+#gfriucmnjs .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2617,7 +2635,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-bottom-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_footnotes {
+#gfriucmnjs .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2631,7 +2649,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-right-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_footnote {
+#gfriucmnjs .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 1px;
@@ -2640,7 +2658,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   padding-right: 5px;
 }
 
-#bfbuvurnuc .gt_sourcenotes {
+#gfriucmnjs .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2654,7 +2672,7 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   border-right-color: #D3D3D3;
 }
 
-#bfbuvurnuc .gt_sourcenote {
+#gfriucmnjs .gt_sourcenote {
   font-size: 90%;
   padding-top: 1px;
   padding-bottom: 1px;
@@ -2662,72 +2680,72 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
   padding-right: 5px;
 }
 
-#bfbuvurnuc .gt_left {
+#gfriucmnjs .gt_left {
   text-align: left;
 }
 
-#bfbuvurnuc .gt_center {
+#gfriucmnjs .gt_center {
   text-align: center;
 }
 
-#bfbuvurnuc .gt_right {
+#gfriucmnjs .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bfbuvurnuc .gt_font_normal {
+#gfriucmnjs .gt_font_normal {
   font-weight: normal;
 }
 
-#bfbuvurnuc .gt_font_bold {
+#gfriucmnjs .gt_font_bold {
   font-weight: bold;
 }
 
-#bfbuvurnuc .gt_font_italic {
+#gfriucmnjs .gt_font_italic {
   font-style: italic;
 }
 
-#bfbuvurnuc .gt_super {
+#gfriucmnjs .gt_super {
   font-size: 65%;
 }
 
-#bfbuvurnuc .gt_footnote_marks {
+#gfriucmnjs .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bfbuvurnuc .gt_asterisk {
+#gfriucmnjs .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bfbuvurnuc .gt_indent_1 {
+#gfriucmnjs .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bfbuvurnuc .gt_indent_2 {
+#gfriucmnjs .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bfbuvurnuc .gt_indent_3 {
+#gfriucmnjs .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bfbuvurnuc .gt_indent_4 {
+#gfriucmnjs .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bfbuvurnuc .gt_indent_5 {
+#gfriucmnjs .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bfbuvurnuc .katex-display {
+#gfriucmnjs .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bfbuvurnuc div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#gfriucmnjs div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -2752,13 +2770,13 @@ Table&nbsp;10.6: Demographic Characteristics of the Concurrent Criterion Validit
 </tr>
 <tr class="gt_col_headings even">
 <th id="stat_1_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>K</strong><br>
-N = 260</th>
+N = 269</th>
 <th id="stat_2_1" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G1</strong><br>
-N = 228</th>
+N = 242</th>
 <th id="stat_1_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>K</strong><br>
-N = 52</th>
+N = 53</th>
 <th id="stat_2_2" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>G1</strong><br>
-N = 166</th>
+N = 167</th>
 </tr>
 </thead>
 <tbody class="gt_table_body">
@@ -2774,11 +2792,11 @@ N = 166</th>
 </td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Winter 2024</td>
-<td class="gt_row gt_center" headers="stat_1_1">260 (100%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">228 (100%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">52 (100%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">166 (100%)</td>
+<td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;AY 2023/24</td>
+<td class="gt_row gt_center" headers="stat_1_1">269 (100%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">242 (100%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">53 (100%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">167 (100%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">Race</td>
@@ -2794,21 +2812,21 @@ N = 166</th>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;American/Alaskan Native</td>
 <td class="gt_row gt_center" headers="stat_1_1">5 (1.9%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">3 (1.3%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">3 (1.2%)</td>
 <td class="gt_row gt_center" headers="stat_1_2">0 (0%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">4 (2.4%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Asian</td>
-<td class="gt_row gt_center" headers="stat_1_1">35 (14%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">37 (16%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">36 (14%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">37 (15%)</td>
 <td class="gt_row gt_center" headers="stat_1_2">2 (3.8%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">2 (1.2%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Black/African American</td>
 <td class="gt_row gt_center" headers="stat_1_1">29 (11%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">28 (12%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">31 (13%)</td>
 <td class="gt_row gt_center" headers="stat_1_2"><br>
 </td>
 <td class="gt_row gt_center" headers="stat_2_2"><br>
@@ -2816,23 +2834,23 @@ N = 166</th>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not reported</td>
-<td class="gt_row gt_center" headers="stat_1_1">29 (11%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">32 (14%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">28 (54%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">31 (12%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">32 (13%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">28 (53%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">116 (71%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_1_1">73 (28%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">44 (19%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">74 (28%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">49 (20%)</td>
 <td class="gt_row gt_center" headers="stat_1_2">11 (21%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">5 (3.0%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;White</td>
-<td class="gt_row gt_center" headers="stat_1_1">86 (33%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">84 (37%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">11 (21%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">91 (34%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">90 (37%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">12 (23%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">37 (23%)</td>
 </tr>
 <tr class="even">
@@ -2840,7 +2858,7 @@ N = 166</th>
 <td class="gt_row gt_center" headers="stat_1_1">3</td>
 <td class="gt_row gt_center" headers="stat_2_1">0</td>
 <td class="gt_row gt_center" headers="stat_1_2">0</td>
-<td class="gt_row gt_center" headers="stat_2_2">2</td>
+<td class="gt_row gt_center" headers="stat_2_2">3</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">Ethnicity</td>
@@ -2855,15 +2873,15 @@ N = 166</th>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Hispanic/Latin(o/a)</td>
-<td class="gt_row gt_center" headers="stat_1_1">106 (41%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">96 (42%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">47 (90%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">155 (93%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">109 (41%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">99 (41%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">48 (91%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">156 (93%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Intentional nonreport</td>
-<td class="gt_row gt_center" headers="stat_1_1">7 (2.7%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">2 (0.9%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">8 (3.0%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">2 (0.8%)</td>
 <td class="gt_row gt_center" headers="stat_1_2"><br>
 </td>
 <td class="gt_row gt_center" headers="stat_2_2"><br>
@@ -2871,9 +2889,9 @@ N = 166</th>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Not Hispanic/Latin(o/a)</td>
-<td class="gt_row gt_center" headers="stat_1_1">147 (57%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">130 (57%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">5 (9.6%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">152 (57%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">141 (58%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">5 (9.4%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">11 (6.6%)</td>
 </tr>
 <tr class="odd">
@@ -2889,17 +2907,17 @@ N = 166</th>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Female</td>
-<td class="gt_row gt_center" headers="stat_1_1">130 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">105 (46%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">33 (63%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">133 (49%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">115 (48%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">33 (62%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">82 (49%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Male</td>
-<td class="gt_row gt_center" headers="stat_1_1">130 (50%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">123 (54%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">19 (37%)</td>
-<td class="gt_row gt_center" headers="stat_2_2">84 (51%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">136 (51%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">127 (52%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">20 (38%)</td>
+<td class="gt_row gt_center" headers="stat_2_2">85 (51%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">Home Language</td>
@@ -2914,22 +2932,22 @@ N = 166</th>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English</td>
-<td class="gt_row gt_center" headers="stat_1_1">191 (75%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">170 (75%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">6 (12%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">198 (75%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">181 (75%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">6 (11%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">17 (10%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Spanish</td>
-<td class="gt_row gt_center" headers="stat_1_1">33 (13%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">25 (11%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">45 (87%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">34 (13%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">26 (11%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">46 (87%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">146 (89%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Other</td>
-<td class="gt_row gt_center" headers="stat_1_1">31 (12%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">32 (14%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">32 (12%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">34 (14%)</td>
 <td class="gt_row gt_center" headers="stat_1_2">1 (1.9%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">1 (0.6%)</td>
 </tr>
@@ -2938,7 +2956,7 @@ N = 166</th>
 <td class="gt_row gt_center" headers="stat_1_1">5</td>
 <td class="gt_row gt_center" headers="stat_2_1">1</td>
 <td class="gt_row gt_center" headers="stat_1_2">0</td>
-<td class="gt_row gt_center" headers="stat_2_2">2</td>
+<td class="gt_row gt_center" headers="stat_2_2">3</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">English Proficiency Label</td>
@@ -2953,44 +2971,44 @@ N = 166</th>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;(Re-)Classified Proficient</td>
-<td class="gt_row gt_center" headers="stat_1_1">11 (5.1%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">18 (8.1%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">11 (4.9%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">19 (8.0%)</td>
 <td class="gt_row gt_center" headers="stat_1_2">6 (12%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">19 (12%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English Learner</td>
-<td class="gt_row gt_center" headers="stat_1_1">48 (22%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">40 (18%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">41 (84%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">50 (22%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">42 (18%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">42 (84%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">129 (79%)</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;English-only</td>
-<td class="gt_row gt_center" headers="stat_1_1">156 (73%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">165 (74%)</td>
-<td class="gt_row gt_center" headers="stat_1_2">2 (4.1%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">162 (73%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">176 (74%)</td>
+<td class="gt_row gt_center" headers="stat_1_2">2 (4.0%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">16 (9.8%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">45</td>
+<td class="gt_row gt_center" headers="stat_1_1">46</td>
 <td class="gt_row gt_center" headers="stat_2_1">5</td>
 <td class="gt_row gt_center" headers="stat_1_2">3</td>
-<td class="gt_row gt_center" headers="stat_2_2">2</td>
+<td class="gt_row gt_center" headers="stat_2_2">3</td>
 </tr>
 <tr class="even">
 <td class="gt_row gt_left" headers="label">Ever IEP/504</td>
-<td class="gt_row gt_center" headers="stat_1_1">20 (10.0%)</td>
-<td class="gt_row gt_center" headers="stat_2_1">22 (12%)</td>
+<td class="gt_row gt_center" headers="stat_1_1">20 (9.8%)</td>
+<td class="gt_row gt_center" headers="stat_2_1">24 (12%)</td>
 <td class="gt_row gt_center" headers="stat_1_2">1 (2.3%)</td>
 <td class="gt_row gt_center" headers="stat_2_2">11 (7.1%)</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="label">&nbsp;&nbsp;&nbsp;&nbsp;Unknown</td>
-<td class="gt_row gt_center" headers="stat_1_1">59</td>
+<td class="gt_row gt_center" headers="stat_1_1">65</td>
 <td class="gt_row gt_center" headers="stat_2_1">48</td>
-<td class="gt_row gt_center" headers="stat_1_2">9</td>
+<td class="gt_row gt_center" headers="stat_1_2">10</td>
 <td class="gt_row gt_center" headers="stat_2_2">11</td>
 </tr>
 </tbody>
@@ -3056,20 +3074,20 @@ All
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">K</td>
-<td style="text-align: center;">260</td>
-<td style="text-align: center;">0.50 [0.40, 0.58]</td>
-<td style="text-align: center;">48</td>
-<td style="text-align: center;">0.54 [0.31, 0.72]</td>
-<td style="text-align: center;">52</td>
-<td style="text-align: center;">0.57 [0.35, 0.73]</td>
+<td style="text-align: center;">269</td>
+<td style="text-align: center;">0.35 [0.24, 0.45]</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">0.20 [-0.08, 0.45]</td>
+<td style="text-align: center;">53</td>
+<td style="text-align: center;">0.57 [0.35, 0.72]</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">G1</td>
-<td style="text-align: center;">228</td>
-<td style="text-align: center;">0.49 [0.38, 0.58]</td>
-<td style="text-align: center;">40</td>
-<td style="text-align: center;">0.31 [-0.01, 0.56]</td>
-<td style="text-align: center;">166</td>
+<td style="text-align: center;">242</td>
+<td style="text-align: center;">0.30 [0.18, 0.41]</td>
+<td style="text-align: center;">42</td>
+<td style="text-align: center;">0.09 [-0.22, 0.38]</td>
+<td style="text-align: center;">167</td>
 <td style="text-align: center;">0.40 [0.27, 0.52]</td>
 </tr>
 </tbody>

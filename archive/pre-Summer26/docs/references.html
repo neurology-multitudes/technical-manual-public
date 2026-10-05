@@ -1,0 +1,2109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>References – Technical Manual</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./ch24_us_final-models.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="resources/custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">References</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Technical Manual</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/neurology-multitudes/technical-manual" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="./Technical-Manual.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Executive Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Introduction</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch1_overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Overview</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch2_mission-vision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Mission and Vision</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch3_fairness.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Fairness in Testing</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch4_participants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Multitudes Development Participants</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch5_screening-sequence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Multitudes Screening Sequence</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch6_domains-measures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Domains and Measures</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Measure Development</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch7_psychometrics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Psychometric Approach</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dgs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Digit Span Forward</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./elie.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Elision-Expressive</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./elir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Elision-Receptive</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./evo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Expressive Vocabulary</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lco.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Listening Comprehension</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lnf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Letter Naming Fluency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lsf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Letter Sound Fluency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Nonword Reading</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nsp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Narrative Story Production</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./nwr.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Nonword Repetition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./orf.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">18</span>&nbsp; <span class="chapter-title">Oral Reading Fluency</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ranl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Rapid Automatized Naming of Letters</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./rano.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">20</span>&nbsp; <span class="chapter-title">Rapid Automatized Naming of Objects</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./smt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">21</span>&nbsp; <span class="chapter-title">Semantic Mapping</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./spe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">22</span>&nbsp; <span class="chapter-title">Spelling</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./srt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">23</span>&nbsp; <span class="chapter-title">Sentence Repetition</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./wre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">24</span>&nbsp; <span class="chapter-title">Word Reading</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Universal Screening</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch20_us_introduction.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">25</span>&nbsp; <span class="chapter-title">Introduction</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch21_us_support-needed-def.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">26</span>&nbsp; <span class="chapter-title">Definition of ‘Support Needed’</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch22_us_sample.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">27</span>&nbsp; <span class="chapter-title">Sample</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch23_us_modeling-approach.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">28</span>&nbsp; <span class="chapter-title">Approach to Screening Model Building and Evaluation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./ch24_us_final-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Final Screening Models</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Add logo to sidebar on all pages - tight fit
+  const sidebar = document.querySelector('.sidebar-navigation');
+  if (sidebar) {
+    const logoDiv = document.createElement('div');
+    logoDiv.className = 'sidebar-logo';
+    logoDiv.innerHTML = '<img src="resources/multitudes_logo_tagline.jpg" alt="Logo" style="width: 100%; height: auto; display: block;">';
+    sidebar.insertBefore(logoDiv, sidebar.firstChild);
+  }
+  
+  // Add logo at the very top of the main content on index page only
+  const isIndexPage = window.location.pathname.endsWith('index.html') || 
+                      window.location.pathname.endsWith('/');
+  
+  if (isIndexPage) {
+    const mainContent = document.querySelector('#quarto-content main');
+    if (mainContent) {
+      const logoDiv = document.createElement('div');
+      logoDiv.style.textAlign = 'center';
+      logoDiv.style.marginTop = '1rem';
+      logoDiv.style.marginBottom = '1rem';
+      logoDiv.innerHTML = '<img src="resources/multitudes_logo_tagline.jpg" alt="Logo" style="max-width: 500px;">';
+      mainContent.insertBefore(logoDiv, mainContent.firstChild);
+      
+      // Center title and subtitle on index page only
+      const title = mainContent.querySelector('h1.title');
+      if (title) {
+        title.style.textAlign = 'center';
+      }
+      const subtitle = mainContent.querySelector('.subtitle');
+      if (subtitle) {
+        subtitle.style.textAlign = 'center';
+      }
+    }
+  }
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">References</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- \clearpairofpagestyles -->
+<!-- \rohead{References} -->
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-AbuHamour2012" class="csl-entry" role="listitem">
+Abu-Hamour, B., H. Al Hmouz, J. Mattar, and M. Muhaidat. 2012.
+<span>“The Use of Woodcock Johnson Tests for Identifying Students with
+Special Needs—a Comprehensive Literature Review.”</span> <em>Procedia -
+Social and Behavioral Sciences</em> 47: 665–73. <a href="https://doi.org/10.1016/j.sbspro.2012.06.714">https://doi.org/10.1016/j.sbspro.2012.06.714</a>.
+</div>
+<div id="ref-adams1990beginning" class="csl-entry" role="listitem">
+Adams, Marilyn J. 1990. <em>Beginning to Read: Thinking and Learning
+about Print</em>. Cambridge, MA: MIT Press.
+</div>
+<div id="ref-adlof2010kindergarten" class="csl-entry" role="listitem">
+Adlof, Suzanne M., Hugh W. Catts, and Jaehoon Lee. 2010.
+<span>“Kindergarten Predictors of Second Versus Eighth Grade Reading
+Comprehension Impairments.”</span> <em>Journal of Learning
+Disabilities</em> 43 (4): 332–45.
+</div>
+<div id="ref-adlof2017" class="csl-entry" role="listitem">
+Adlof, Suzanne M., and Hannah Patten. 2017. <span>“Nonword Repetition
+and Vocabulary Knowledge as Predictors of Children’s Phonological and
+Semantic Word Learning.”</span> <em>Journal of Speech, Language, and
+Hearing Research</em> 60 (3): 682–93. <a href="https://doi.org/10.1044/2016_jslhr-l-15-0441">https://doi.org/10.1044/2016_jslhr-l-15-0441</a>.
+</div>
+<div id="ref-Alonso2016" class="csl-entry" role="listitem">
+Alonso, M. Á., E. Díez, and Á. Fernández. 2016. <span>“Subjective
+Age-of-Acquisition Norms for 4,640 Verbs in Spanish.”</span>
+<em>Behavior Research Methods</em> 48 (4): 1337–42. <a href="https://doi.org/10.3758/s13428-015-0675-z">https://doi.org/10.3758/s13428-015-0675-z</a>.
+</div>
+<div id="ref-Alonso2015" class="csl-entry" role="listitem">
+Alonso, M. Á., Á. Fernández, and E. Díez. 2015. <span>“Subjective
+Age-of-Acquisition Norms for 7,039 Spanish Words.”</span> <em>Behavior
+Research Methods</em> 47 (1): 268–74. <a href="https://doi.org/10.3758/s13428-014-0454-2">https://doi.org/10.3758/s13428-014-0454-2</a>.
+</div>
+<div id="ref-AERA_APA_NCME2014" class="csl-entry" role="listitem">
+American Educational Research Association, American Psychological
+Association, and National Council on Measurement in Education. 2014.
+<em>Standards for Educational and Psychological Testing</em>.
+Washington, DC: American Educational Research Association.
+</div>
+<div id="ref-andrich1988" class="csl-entry" role="listitem">
+Andrich, David. 1988. <span>“The Application of an Unfolding Model of
+the PIRT Type to the Measurement of Attitude.”</span> <em>Applied
+Psychological Measurement</em> 12 (1): 33–51. <a href="https://doi.org/10.1177/014662168801200105">https://doi.org/10.1177/014662168801200105</a>.
+</div>
+<div id="ref-anthony2009" class="csl-entry" role="listitem">
+Anthony, Jason L., Jeffrey M. Williams, Rachel G. Aghara, Martha
+Dunkelberger, Barbara Novak, and Anuja Divatia Mukherjee. 2009.
+<span>“Assessment of Individual Differences in Phonological
+Representation.”</span> <em>Reading and Writing</em> 23 (8): 969–94. <a href="https://doi.org/10.1007/s11145-009-9185-7">https://doi.org/10.1007/s11145-009-9185-7</a>.
+</div>
+<div id="ref-anthony2011" class="csl-entry" role="listitem">
+Anthony, Jason L., Jeffrey M. Williams, Lillian K. Durán, Sandra Laing
+Gillam, Lan Liang, Rachel Aghara, Paul R. Swank, Mike A. Assel, and
+Susan H. Landry. 2011. <span>“Spanish Phonological Awareness:
+Dimensionality and Sequence of Development During the Preschool and
+Kindergarten Years.”</span> <em>Journal of Educational Psychology</em>
+103 (4): 857–76. <a href="https://doi.org/10.1037/a0025024">https://doi.org/10.1037/a0025024</a>.
+</div>
+<div id="ref-anthony2006" class="csl-entry" role="listitem">
+Anthony, Jason L., Jeffrey M. Williams, Renee McDonald, Deborah
+Corbitt-Shindler, Coleen D. Carlson, and David J. Francis. 2006.
+<span>“Phonological Processing and Emergent Literacy in Spanish-Speaking
+Preschool Children.”</span> <em>Annals of Dyslexia</em> 56 (2): 239–70.
+<a href="https://doi.org/10.1007/s11881-006-0011-5">https://doi.org/10.1007/s11881-006-0011-5</a>.
+</div>
+<div id="ref-araújo2019" class="csl-entry" role="listitem">
+Araújo, Susana, and Luís Faísca. 2019. <span>“A Meta-Analytic Review of
+Naming-Speed Deficits in Developmental Dyslexia.”</span> <em>Scientific
+Studies of Reading</em> 23 (5): 349–68. <a href="https://doi.org/10.1080/10888438.2019.1572758">https://doi.org/10.1080/10888438.2019.1572758</a>.
+</div>
+<div id="ref-baddeley2003" class="csl-entry" role="listitem">
+Baddeley, Alan. 2003. <span>“Working Memory and Language: An
+Overview.”</span> <em>Journal of Communication Disorders</em> 36 (3):
+189–208. <a href="https://doi.org/10.1016/s0021-9924(03)00019-4">https://doi.org/10.1016/s0021-9924(03)00019-4</a>.
+</div>
+<div id="ref-baddeley1974" class="csl-entry" role="listitem">
+Baddeley, Alan D., and Graham Hitch. 1974. <span>“Working
+Memory.”</span> In, 47–89. Elsevier. <a href="https://doi.org/10.1016/s0079-7421(08)60452-1">https://doi.org/10.1016/s0079-7421(08)60452-1</a>.
+</div>
+<div id="ref-baker2010pseudoword" class="csl-entry" role="listitem">
+Baker, Diana L., Young-Suk Park, and Scott K. Baker. 2010. <span>“Effect
+of Initial Status and Growth in Pseudoword Reading on Spanish Reading
+Comprehension at the End of First Grade.”</span> <em>Psicothema</em> 22
+(4): 955–62.
+</div>
+<div id="ref-baker2010" class="csl-entry" role="listitem">
+Baker, Doris Luft, Yonghan Park, and Scott K. Baker. 2010. <span>“The
+Reading Performance of English Learners in Grades 1<span></span>3: The
+Role of Initial Status and Growth on Reading Fluency in Spanish and
+English.”</span> <em>Reading and Writing</em> 25 (1): 251–81. <a href="https://doi.org/10.1007/s11145-010-9261-z">https://doi.org/10.1007/s11145-010-9261-z</a>.
+</div>
+<div id="ref-biemiller2001" class="csl-entry" role="listitem">
+Biemiller, Andrew, and Naomi Slonim. 2001. <span>“Estimating Root Word
+Vocabulary Growth in Normative and Advantaged Populations: Evidence for
+a Common Sequence of Vocabulary Acquisition.”</span> <em>Journal of
+Educational Psychology</em> 93 (3): 498–520. <a href="https://doi.org/10.1037/0022-0663.93.3.498">https://doi.org/10.1037/0022-0663.93.3.498</a>.
+</div>
+<div id="ref-Bosse2007" class="csl-entry" role="listitem">
+Bosse, M.-L., M.-J. Tainturier, and S. Valdois. 2007.
+<span>“Developmental Dyslexia: The Visual Attention Span Deficit
+Hypothesis.”</span> <em>Cognition</em> 104 (2): 198–230. <a href="https://doi.org/10.1016/j.cognition.2006.05.009">https://doi.org/10.1016/j.cognition.2006.05.009</a>.
+</div>
+<div id="ref-Bosse2009" class="csl-entry" role="listitem">
+Bosse, M.-L., and S. Valdois. 2009. <span>“Influence of the Visual
+Attention Span on Child Reading Performance: A Cross-Sectional
+Study.”</span> <em>Journal of Research in Reading</em> 32 (2): 230–53.
+<a href="https://doi.org/10.1111/j.1467-9817.2008.01387.x">https://doi.org/10.1111/j.1467-9817.2008.01387.x</a>.
+</div>
+<div id="ref-brady1986" class="csl-entry" role="listitem">
+Brady, Susan. 1986. <span>“Short-Term Memory, Phonological Processing,
+and Reading Ability.”</span> <em>Annals of Dyslexia</em> 36 (1): 138–53.
+<a href="https://doi.org/10.1007/bf02648026">https://doi.org/10.1007/bf02648026</a>.
+</div>
+<div id="ref-brady1983" class="csl-entry" role="listitem">
+Brady, Susan, Donald Shankweiler, and Virginia Mann. 1983. <span>“Speech
+Perception and Memory Coding in Relation to Reading Ability.”</span>
+<em>Journal of Experimental Child Psychology</em> 35 (2): 345–67. <a href="https://doi.org/10.1016/0022-0965(83)90087-5">https://doi.org/10.1016/0022-0965(83)90087-5</a>.
+</div>
+<div id="ref-Brysbaert2017" class="csl-entry" role="listitem">
+Brysbaert, M., and A. Biemiller. 2017. <span>“Test-Based
+Age-of-Acquisition Norms for 44 Thousand English Word Meanings.”</span>
+<em>Behavior Research Methods</em> 49: 1520–23. <a href="https://doi.org/10.3758/s13428-016-0811-4">https://doi.org/10.3758/s13428-016-0811-4</a>.
+</div>
+<div id="ref-inbook" class="csl-entry" role="listitem">
+Caravolas, M., and Anna Samara. 2015. <span>“Learning to Read and Spell
+Words in Different Writing Systems.”</span> In.
+</div>
+<div id="ref-catts2001" class="csl-entry" role="listitem">
+Catts, Hugh W., Marc E. Fey, Xuyang Zhang, and J. Bruce Tomblin. 2001.
+<span>“Estimating the Risk of Future Reading Difficulties in
+Kindergarten Children.”</span> <em>Language, Speech, and Hearing
+Services in Schools</em> 32 (1): 38–50. <a href="https://doi.org/10.1044/0161-1461(2001/004)">https://doi.org/10.1044/0161-1461(2001/004)</a>.
+</div>
+<div id="ref-catts2005developmental" class="csl-entry" role="listitem">
+Catts, Hugh W., Tiffany P. Hogan, and Suzanne M. Adlof. 2005.
+<span>“Developmental Changes in Reading and Reading
+Disabilities.”</span> In <em>The Connections Between Language and
+Reading Disabilities</em>, edited by Hugh W. Catts and Alan G. Kamhi,
+25–40. Mahwah, NJ: Lawrence Erlbaum Associates Publishers.
+</div>
+<div id="ref-chen2021" class="csl-entry" role="listitem">
+Chen, Yi-Jui Iva, Christopher G. Thompson, Zhihong Xu, Robin C. Irey,
+and George K. Georgiou. 2021. <span>“Rapid Automatized Naming and
+Spelling Performance in Alphabetic Languages: A Meta-Analysis.”</span>
+<em>Reading and Writing</em> 34 (10): 2559–80. <a href="https://doi.org/10.1007/s11145-021-10160-7">https://doi.org/10.1007/s11145-021-10160-7</a>.
+</div>
+<div id="ref-chua2014" class="csl-entry" role="listitem">
+Chua, Shi Min, Susan J. Rickard Liow, and Stephanie H. M. Yeong. 2014.
+<span>“Using Spelling to Screen Bilingual Kindergarteners At Risk for
+Reading Difficulties.”</span> <em>Journal of Learning Disabilities</em>
+49 (3): 227–39. <a href="https://doi.org/10.1177/0022219414538519">https://doi.org/10.1177/0022219414538519</a>.
+</div>
+<div id="ref-clayton2019" class="csl-entry" role="listitem">
+Clayton, Francina J., Gillian West, Claire Sears, Charles Hulme, and
+Arne Lervåg. 2019. <span>“A Longitudinal Study of Early Reading
+Development: Letter-Sound Knowledge, Phoneme Awareness and RAN, but Not
+Letter-Sound Integration, Predict Variations in Reading
+Development.”</span> <em>Scientific Studies of Reading</em> 24 (2):
+91–107. <a href="https://doi.org/10.1080/10888438.2019.1622546">https://doi.org/10.1080/10888438.2019.1622546</a>.
+</div>
+<div id="ref-coady2008" class="csl-entry" role="listitem">
+Coady, Jeffry A., and Julia L. Evans. 2008. <span>“Uses and
+Interpretations of Non<span>-</span>Word Repetition Tasks in Children
+with and Without Specific Language Impairments (SLI).”</span>
+<em>International Journal of Language &amp; Communication Disorders</em>
+43 (1): 1–40. <a href="https://doi.org/10.1080/13682820601116485">https://doi.org/10.1080/13682820601116485</a>.
+</div>
+<div id="ref-crosson2009" class="csl-entry" role="listitem">
+Crosson, Amy C., and Nonie K. Lesaux. 2009. <span>“Revisiting
+Assumptions about the Relationship of Fluent Reading to Comprehension:
+Spanish-Speakers<span>’</span> Text-Reading Fluency in English.”</span>
+<em>Reading and Writing</em> 23 (5): 475–94. <a href="https://doi.org/10.1007/s11145-009-9168-8">https://doi.org/10.1007/s11145-009-9168-8</a>.
+</div>
+<div id="ref-cui2020" class="csl-entry" role="listitem">
+Cui, Zhongmin. 2020. <span>“A Seed Usage Issue on Using catR for
+Simulation and the Solution.”</span> <em>Applied Psychological
+Measurement</em> 44 (5): 409–12. <a href="https://doi.org/10.1177/0146621620920934">https://doi.org/10.1177/0146621620920934</a>.
+</div>
+<div id="ref-cummine2014" class="csl-entry" role="listitem">
+Cummine, Jacqueline, Eszter Szepesvari, Brea Chouinard, Wahab Hanif, and
+George K. Georgiou. 2014. <span>“A Functional Investigation of RAN
+Letters, Digits, and Objects: How Similar Are They?”</span>
+<em>Behavioural Brain Research</em> 275 (December): 157–65. <a href="https://doi.org/10.1016/j.bbr.2014.08.038">https://doi.org/10.1016/j.bbr.2014.08.038</a>.
+</div>
+<div id="ref-cunningham2020" class="csl-entry" role="listitem">
+Cunningham, Anna J., Adrian P. Burgess, Caroline Witton, Joel B.
+Talcott, and Laura R. Shapiro. 2020. <span>“Dynamic Relationships
+Between Phonological Memory and Reading: A Five Year Longitudinal Study
+from Age 4 to 9.”</span> <em>Developmental Science</em> 24 (1). <a href="https://doi.org/10.1111/desc.12986">https://doi.org/10.1111/desc.12986</a>.
+</div>
+<div id="ref-cutting2006" class="csl-entry" role="listitem">
+Cutting, Laurie E., and Hollis S. Scarborough. 2006. <span>“Prediction
+of Reading Comprehension: Relative Contributions of Word Recognition,
+Language Proficiency, and Other Cognitive Skills Can Depend on How
+Comprehension Is Measured.”</span> <em>Scientific Studies of
+Reading</em> 10 (3): 277–99. <a href="https://doi.org/10.1207/s1532799xssr1003_5">https://doi.org/10.1207/s1532799xssr1003_5</a>.
+</div>
+<div id="ref-delacalle2018" class="csl-entry" role="listitem">
+De la Calle, Guzmán-Simón, A. M. 2018. <span>“Letter Knowledge and
+Learning Sequence of Graphemes in Spanish: Precursors of Early
+Reading.”</span> <em>Revista de Psicodidáctica (English Ed.)</em> 23
+(2): 128–36.
+</div>
+<div id="ref-deramírez2007" class="csl-entry" role="listitem">
+De Ramírez, Romilia Domínguez, and Edward S. Shapiro. 2007.
+<span>“Cross<span>-</span>Language Relationship Between Spanish and
+English Oral Reading Fluency Among Spanish<span>-</span>Speaking English
+Language Learners in Bilingual Education Classrooms.”</span>
+<em>Psychology in the Schools</em> 44 (8): 795–806. <a href="https://doi.org/10.1002/pits.20266">https://doi.org/10.1002/pits.20266</a>.
+</div>
+<div id="ref-deacon2018" class="csl-entry" role="listitem">
+Deacon, S. Hélène, and Michael Kieffer. 2018. <span>“Understanding How
+Syntactic Awareness Contributes to Reading Comprehension: Evidence from
+Mediation and Longitudinal Models.”</span> <em>Journal of Educational
+Psychology</em> 110 (1): 72–86. <a href="https://doi.org/10.1037/edu0000198">https://doi.org/10.1037/edu0000198</a>.
+</div>
+<div id="ref-defior2005" class="csl-entry" role="listitem">
+Defior, Sylvia, and Francisca Serrano. 2005. <span>“The Initial
+Development of Spelling in Spanish: From Global to Analytical.”</span>
+<em>Reading and Writing</em> 18 (1): 81–98. <a href="https://doi.org/10.1007/s11145-004-5893-1">https://doi.org/10.1007/s11145-004-5893-1</a>.
+</div>
+<div id="ref-denckla1974" class="csl-entry" role="listitem">
+Denckla, Martha Bridge, and Rita Rudel. 1974. <span>“Rapid
+<span>“</span>Automatized<span>”</span> Naming of Pictured Objects,
+Colors, Letters and Numbers by Normal Children.”</span> <em>Cortex</em>
+10 (2): 186–202. <a href="https://doi.org/10.1016/s0010-9452(74)80009-2">https://doi.org/10.1016/s0010-9452(74)80009-2</a>.
+</div>
+<div id="ref-denckla1976" class="csl-entry" role="listitem">
+Denckla, Martha Bridge, and Rita G. Rudel. 1976. <span>“Rapid
+<span>‘</span>Automatized<span>’</span> Naming (R.A.N.): Dyslexia
+Differentiated from Other Learning Disabilities.”</span>
+<em>Neuropsychologia</em> 14 (4): 471–79. <a href="https://doi.org/10.1016/0028-3932(76)90075-0">https://doi.org/10.1016/0028-3932(76)90075-0</a>.
+</div>
+<div id="ref-dickinson2004" class="csl-entry" role="listitem">
+Dickinson, David K., Allyssa McCabe, Nancy ClarkChiarelli, and Anne
+Wolf. 2004. <span>“Cross-Language Transfer of Phonological Awareness in
+Low-Income Spanish and English Bilingual Preschool Children.”</span>
+<em>Applied Psycholinguistics</em> 25 (3): 323–47. <a href="https://doi.org/10.1017/s0142716404001158">https://doi.org/10.1017/s0142716404001158</a>.
+</div>
+<div id="ref-durgunoglu1993" class="csl-entry" role="listitem">
+Durgunoğlu, Aydin Y., William E. Nagy, and Barbara J. Hancin-Bhatt.
+1993. <span>“Cross-Language Transfer of Phonological Awareness.”</span>
+<em>Journal of Educational Psychology</em> 85 (3): 453–65. <a href="https://doi.org/10.1037/0022-0663.85.3.453">https://doi.org/10.1037/0022-0663.85.3.453</a>.
+</div>
+<div id="ref-ehri2020" class="csl-entry" role="listitem">
+Ehri, Linnea C. 2020. <span>“The Science of Learning to Read Words: A
+Case for Systematic Phonics Instruction.”</span> <em>Reading Research
+Quarterly</em> 55 (S1). <a href="https://doi.org/10.1002/rrq.334">https://doi.org/10.1002/rrq.334</a>.
+</div>
+<div id="ref-ellis1994longitudinal" class="csl-entry" role="listitem">
+Ellis, Nick. 1994. <span>“Longitudinal Studies of Spelling
+Development.”</span> In <em>Handbook of Spelling: Theory, Process and
+Intervention</em>, edited by Gordon D. A. Brown and Nick C. Ellis,
+155–77. Chichester, UK: John Wiley &amp; Sons.
+</div>
+<div id="ref-ellis1990" class="csl-entry" role="listitem">
+Ellis, Nick, and Suzanne Cataldo. 1990. <span>“The Role of Spelling in
+Learning to Read.”</span> <em>Language and Education</em> 4 (1): 1–28.
+<a href="https://doi.org/10.1080/09500789009541270">https://doi.org/10.1080/09500789009541270</a>.
+</div>
+<div id="ref-engelhard2020rasch" class="csl-entry" role="listitem">
+Engelhard, George Jr., and Jue Wang. 2020. <em>Rasch Models for Solving
+Measurement Problems: Invariant Measurement in the Social Sciences</em>.
+Quantitative Applications in the Social Sciences. Thousand Oaks, CA:
+SAGE Publications, Inc.
+</div>
+<div id="ref-engelhard2018tale" class="csl-entry" role="listitem">
+Engelhard, George, Jue Wang, and Stefanie A. Wind. 2018. <span>“A Tale
+of Two Models: Psychometric and Cognitive Perspectives on Rater-Mediated
+Assessments Using Accuracy Ratings.”</span> <em>Psychological Test and
+Assessment Modeling</em> 60 (1): 33–52.
+</div>
+<div id="ref-ferreiro1982literacy" class="csl-entry" role="listitem">
+Ferreiro, Emilia, and Ana Teberosky. 1982. <em>Literacy Before
+Schooling</em>. Heinemann Educational Books Inc.
+</div>
+<div id="ref-fiestas2004" class="csl-entry" role="listitem">
+Fiestas, Christine E., and Elizabeth D. Penã. 2004. <span>“Narrative
+Discourse in Bilingual Children.”</span> <em>Language, Speech, and
+Hearing Services in Schools</em> 35 (2): 155–68. <a href="https://doi.org/10.1044/0161-1461(2004/016)">https://doi.org/10.1044/0161-1461(2004/016)</a>.
+</div>
+<div id="ref-foorman2023learning" class="csl-entry" role="listitem">
+Foorman, Barbara. 2023. <span>“Learning the Code.”</span> In
+<em>Handbook on the Science of Early Literacy</em>, edited by Sonia Q.
+Cabell, Susan B. Neuman, and Nicole P. Terry, 73–82. New York, NY:
+Guilford Press.
+</div>
+<div id="ref-foorman2015" class="csl-entry" role="listitem">
+Foorman, Barbara R., Sarah Herrera, Yaacov Petscher, Alison Mitchell,
+and Adrea Truckenmiller. 2015. <span>“The Structure of Oral Language and
+Reading and Their Relation to Comprehension in Kindergarten Through
+Grade 2.”</span> <em>Reading and Writing</em> 28 (5): 655–81. <a href="https://doi.org/10.1007/s11145-015-9544-5">https://doi.org/10.1007/s11145-015-9544-5</a>.
+</div>
+<div id="ref-fuchs2001" class="csl-entry" role="listitem">
+Fuchs, Lynn S., Douglas Fuchs, Michelle K. Hosp, and Joseph R. Jenkins.
+2001. <span>“Oral Reading Fluency as an Indicator of Reading Competence:
+A Theoretical, Empirical, and Historical Analysis.”</span>
+<em>Scientific Studies of Reading</em> 5 (3): 239–56. <a href="https://doi.org/10.1207/s1532799xssr0503_3">https://doi.org/10.1207/s1532799xssr0503_3</a>.
+</div>
+<div id="ref-garcia2006developing" class="csl-entry" role="listitem">
+Garcia, Gilbert E., Gail McKoon, Diane August, and Timothy Shanahan.
+2006. <em>Developing Literacy in Second-Language Learners: Report of the
+National Literacy Panel on Language-Minority Children and Youth</em>.
+Mahwah, NJ: Lawrence Erlbaum Associates.
+</div>
+<div id="ref-garcía2014" class="csl-entry" role="listitem">
+García, J. Ricardo, and Kate Cain. 2014. <span>“Decoding and Reading
+Comprehension.”</span> <em>Review of Educational Research</em> 84 (1):
+74–111. <a href="https://doi.org/10.3102/0034654313499616">https://doi.org/10.3102/0034654313499616</a>.
+</div>
+<div id="ref-gathercole2006" class="csl-entry" role="listitem">
+Gathercole, Susan E. 2006. <span>“Nonword Repetition and Word Learning:
+The Nature of the Relationship.”</span> <em>Applied
+Psycholinguistics</em> 27 (4): 513–43. <a href="https://doi.org/10.1017/s0142716406060383">https://doi.org/10.1017/s0142716406060383</a>.
+</div>
+<div id="ref-gathercole1994" class="csl-entry" role="listitem">
+Gathercole, Susan E., Catherine S. Willis, Alan D. Baddeley, and Hazel
+Emslie. 1994. <span>“The Children’s Test of Nonword Repetition: A Test
+of Phonological Working Memory.”</span> <em>Memory</em> 2 (2): 103–27.
+<a href="https://doi.org/10.1080/09658219408258940">https://doi.org/10.1080/09658219408258940</a>.
+</div>
+<div id="ref-genesee2006synthesis" class="csl-entry" role="listitem">
+Genesee, Fred, Esther Geva, Cheryl Dressler, and Michael Kamil. 2006.
+<span>“Synthesis: Cross-Linguistic Relationships.”</span> In
+<em>Developing Literacy in Second-Language Learners: Report of the
+National Literacy Panel on Language-Minority Children and Youth</em>,
+153–74. Mahwah, NJ: Lawrence Erlbaum Associates.
+</div>
+<div id="ref-530f71bb-8b46-3934-b636-b2378c2e4231" class="csl-entry" role="listitem">
+Gentry, J. Richard. 1982. <span>“An Analysis of Developmental Spelling
+in "GNYS AT WRK".”</span> <em>The Reading Teacher</em> 36 (2): 192–200.
+<a href="http://www.jstor.org/stable/20198182">http://www.jstor.org/stable/20198182</a>.
+</div>
+<div id="ref-433ae26a-2f48-36f9-81d7-299cf9a2dacd" class="csl-entry" role="listitem">
+———. 2000. <span>“A Retrospective on Invented Spelling and a Look
+Forward.”</span> <em>The Reading Teacher</em> 54 (3): 318–32. <a href="http://www.jstor.org/stable/20204910">http://www.jstor.org/stable/20204910</a>.
+</div>
+<div id="ref-georgiou2020" class="csl-entry" role="listitem">
+Georgiou, George K., and Rauno Parrila. 2020. <span>“What Mechanism
+Underlies the Rapid Automatized Naming<span></span>reading
+Relation?”</span> <em>Journal of Experimental Child Psychology</em> 194
+(June): 104840. <a href="https://doi.org/10.1016/j.jecp.2020.104840">https://doi.org/10.1016/j.jecp.2020.104840</a>.
+</div>
+<div id="ref-georgiou2013" class="csl-entry" role="listitem">
+Georgiou, George K., Rauno Parrila, Ying Cui, and Timothy C.
+Papadopoulos. 2013. <span>“Why Is Rapid Automatized Naming Related to
+Reading?”</span> <em>Journal of Experimental Child Psychology</em> 115
+(1): 218–25. <a href="https://doi.org/10.1016/j.jecp.2012.10.015">https://doi.org/10.1016/j.jecp.2012.10.015</a>.
+</div>
+<div id="ref-gershon2005cat" class="csl-entry" role="listitem">
+Gershon, Richard C. 2005. <span>“Computer Adaptive Testing.”</span>
+<em>Journal of Applied Measurement</em> 6 (1): 109–27.
+</div>
+<div id="ref-geva2000" class="csl-entry" role="listitem">
+Geva, Esther, and Linda S. Siegel. 2000. <em>Reading and Writing</em> 12
+(1/2): 1–30. <a href="https://doi.org/10.1023/a:1008017710115">https://doi.org/10.1023/a:1008017710115</a>.
+</div>
+<div id="ref-goodwin2015" class="csl-entry" role="listitem">
+Goodwin, Amanda P., Diane August, and Margarita Calderon. 2015.
+<span>“Reading in Multiple Orthographies: Differences and Similarities
+in Reading in Spanish and English for English Learners.”</span>
+<em>Language Learning</em> 65 (3): 596–630. <a href="https://doi.org/10.1111/lang.12127">https://doi.org/10.1111/lang.12127</a>.
+</div>
+<div id="ref-gottardo2002" class="csl-entry" role="listitem">
+Gottardo, Alexandra. 2002. <span>“The Relationship Between Language and
+Reading Skills in Bilingual Spanish-English Speakers.”</span> <em>Topics
+in Language Disorders</em> 22 (5): 46–70. <a href="https://doi.org/10.1097/00011363-200211000-00008">https://doi.org/10.1097/00011363-200211000-00008</a>.
+</div>
+<div id="ref-gottardo2021" class="csl-entry" role="listitem">
+Gottardo, Alexandra, Xi Chen, and Michelle Ru Yun Huo. 2021.
+<span>“Understanding Within<span>-</span> and
+Cross<span>-</span>Language Relations Among Language, Preliteracy
+Skills, and Word Reading in Bilingual Learners: Evidence From the
+Science of Reading.”</span> <em>Reading Research Quarterly</em> 56 (S1).
+<a href="https://doi.org/10.1002/rrq.410">https://doi.org/10.1002/rrq.410</a>.
+</div>
+<div id="ref-gottardo2009" class="csl-entry" role="listitem">
+Gottardo, Alexandra, and Julie Mueller. 2009. <span>“Are First- and
+Second-Language Factors Related in Predicting Second-Language Reading
+Comprehension? A Study of Spanish-Speaking Children Acquiring English as
+a Second Language from First to Second Grade.”</span> <em>Journal of
+Educational Psychology</em> 101 (2): 330–44. <a href="https://doi.org/10.1037/a0014320">https://doi.org/10.1037/a0014320</a>.
+</div>
+<div id="ref-gutierrez-clellen1995" class="csl-entry" role="listitem">
+Gutierrez-Clellen, Vera F., Elizabeth Peña, and Rosemary Quinn. 1995.
+<span>“Accommodating Cultural Differences in Narrative Style.”</span>
+<em>Topics in Language Disorders</em> 15 (4): 54–67. <a href="https://doi.org/10.1097/00011363-199508000-00006">https://doi.org/10.1097/00011363-199508000-00006</a>.
+</div>
+<div id="ref-heikkilä2009" class="csl-entry" role="listitem">
+Heikkilä, Riikka, Vesa Närhi, Mikko Aro, and Timo Ahonen. 2009.
+<span>“Rapid Automatized Naming and Learning Disabilities: Does RAN Have
+a Specific Connection to Reading or Not?”</span> <em>Child
+Neuropsychology</em> 15 (4): 343–58. <a href="https://doi.org/10.1080/09297040802537653">https://doi.org/10.1080/09297040802537653</a>.
+</div>
+<div id="ref-heilmann2010" class="csl-entry" role="listitem">
+Heilmann, John, Jon F. Miller, Ann Nockerts, and Claudia Dunaway. 2010.
+<span>“Properties of the Narrative Scoring Scheme Using Narrative
+Retells in Young School-Age Children.”</span> <em>American Journal of
+Speech-Language Pathology</em> 19 (2): 154–66. <a href="https://doi.org/10.1044/1058-0360(2009/08-0024)">https://doi.org/10.1044/1058-0360(2009/08-0024)</a>.
+</div>
+<div id="ref-hogan2014" class="csl-entry" role="listitem">
+Hogan, Tiffany P., Suzanne M. Adlof, and Crystle N. Alonzo. 2014.
+<span>“On the Importance of Listening Comprehension.”</span>
+<em>International Journal of Speech-Language Pathology</em> 16 (3):
+199–207. <a href="https://doi.org/10.3109/17549507.2014.904441">https://doi.org/10.3109/17549507.2014.904441</a>.
+</div>
+<div id="ref-hogan2005" class="csl-entry" role="listitem">
+Hogan, Tiffany P., Hugh W. Catts, and Todd D. Little. 2005. <span>“The
+Relationship Between Phonological Awareness and Reading.”</span>
+<em>Language, Speech, and Hearing Services in Schools</em> 36 (4):
+285–93. <a href="https://doi.org/10.1044/0161-1461(2005/029)">https://doi.org/10.1044/0161-1461(2005/029)</a>.
+</div>
+<div id="ref-hoover1990" class="csl-entry" role="listitem">
+Hoover, Wesley A., and Philip B. Gough. 1990. <span>“The Simple View of
+Reading.”</span> <em>Reading and Writing</em> 2 (2): 127–60. <a href="https://doi.org/10.1007/bf00401799">https://doi.org/10.1007/bf00401799</a>.
+</div>
+<div id="ref-Hulme1988" class="csl-entry" role="listitem">
+Hulme, C. 1988. <span>“The Implausibility of Low-Level Visual Deficits
+as a Cause of Children’s Reading Difficulties.”</span> <em>Cognitive
+Neuropsychology</em> 5 (3): 369–74.
+</div>
+<div id="ref-iveswiley2005" class="csl-entry" role="listitem">
+Ives Wiley, Hilda, and Stanley L. Deno. 2005. <span>“Oral Reading and
+Maze Measures as Predictors of Success for English Learners on a State
+Standards Assessment.”</span> <em>Remedial and Special Education</em> 26
+(4): 207–14. <a href="https://doi.org/10.1177/07419325050260040301">https://doi.org/10.1177/07419325050260040301</a>.
+</div>
+<div id="ref-jasso2020" class="csl-entry" role="listitem">
+Jasso, Javier, Stephanie McMillen, Jissel B. Anaya, Lisa M. Bedore, and
+Elizabeth D. Peña. 2020. <span>“The Utility of an English Semantics
+Measure for Identifying Developmental Language Disorder in
+Spanish<span></span>English Bilinguals.”</span> <em>American Journal of
+Speech-Language Pathology</em> 29 (2): 776–88. <a href="https://doi.org/10.1044/2020_ajslp-19-00202">https://doi.org/10.1044/2020_ajslp-19-00202</a>.
+</div>
+<div id="ref-Jasso2020" class="csl-entry" role="listitem">
+Jasso, J., S. McMillen, J. B. Anaya, L. M. Bedore, and E. D. Peña. 2020.
+<span>“The Utility of an English Semantics Measure for Identifying
+Developmental Language Disorder in Spanish–English Bilinguals.”</span>
+<em>American Journal of Speech-Language Pathology</em> 29 (2): 776–88.
+</div>
+<div id="ref-jeon2014" class="csl-entry" role="listitem">
+Jeon, Eun Hee, and Junko Yamashita. 2014. <span>“L2 Reading
+Comprehension and Its Correlates: A Meta<span>-</span>Analysis.”</span>
+<em>Language Learning</em> 64 (1): 160–212. <a href="https://doi.org/10.1111/lang.12034">https://doi.org/10.1111/lang.12034</a>.
+</div>
+<div id="ref-Johnson2009" class="csl-entry" role="listitem">
+Johnson, E. S., J. R. Jenkins, Y. Petscher, and H. W. Catts. 2009.
+<span>“How Can We Improve the Accuracy of Screening Instruments?”</span>
+<em>Learning Disabilities Research &amp; Practice</em> 24 (4): 174–85.
+</div>
+<div id="ref-katzir2006" class="csl-entry" role="listitem">
+Katzir, Tami, Youngsuk Kim, Maryanne Wolf, Beth O’Brien, Becky Kennedy,
+Maureen Lovett, and Robin Morris. 2006. <span>“Reading Fluency: The
+Whole Is More Than the Parts.”</span> <em>Annals of Dyslexia</em> 56
+(1): 51–82. <a href="https://doi.org/10.1007/s11881-006-0003-5">https://doi.org/10.1007/s11881-006-0003-5</a>.
+</div>
+<div id="ref-kieffer2007" class="csl-entry" role="listitem">
+Kieffer, Michael J., and Nonie K. Lesaux. 2007. <span>“The Role of
+Derivational Morphology in the Reading Comprehension of Spanish-Speaking
+English Language Learners.”</span> <em>Reading and Writing</em> 21 (8):
+783–804. <a href="https://doi.org/10.1007/s11145-007-9092-8">https://doi.org/10.1007/s11145-007-9092-8</a>.
+</div>
+<div id="ref-kilpatrick2012" class="csl-entry" role="listitem">
+Kilpatrick, David A. 2012. <span>“Phonological Segmentation Assessment
+Is Not Enough.”</span> <em>Canadian Journal of School Psychology</em> 27
+(2): 150–65. <a href="https://doi.org/10.1177/0829573512438635">https://doi.org/10.1177/0829573512438635</a>.
+</div>
+<div id="ref-kim2012" class="csl-entry" role="listitem">
+Kim, Young-Suk. 2012. <span>“The Relations Among L1 (Spanish) Literacy
+Skills, L2 (English) Language, L2 Text Reading Fluency, and L2 Reading
+Comprehension for Spanish-Speaking ELL First Grade Students.”</span>
+<em>Learning and Individual Differences</em> 22 (6): 690–700. <a href="https://doi.org/10.1016/j.lindif.2012.06.009">https://doi.org/10.1016/j.lindif.2012.06.009</a>.
+</div>
+<div id="ref-kim2020" class="csl-entry" role="listitem">
+Kim, Young-Suk Grace. 2020. <span>“Hierarchical and Dynamic Relations of
+Language and Cognitive Skills to Reading Comprehension: Testing the
+Direct and Indirect Effects Model of Reading (DIER).”</span> <em>Journal
+of Educational Psychology</em> 112 (4): 667–84. <a href="https://doi.org/10.1037/edu0000407">https://doi.org/10.1037/edu0000407</a>.
+</div>
+<div id="ref-kim2023" class="csl-entry" role="listitem">
+———. 2023. <span>“Oral Discourse Skills: Dimensionality of Comprehension
+and Retell of Narrative and Expository Texts, and the Relations of
+Language and Cognitive Skills to Identified Dimensions.”</span>
+<em>Child Development</em> 94 (5). <a href="https://doi.org/10.1111/cdev.13935">https://doi.org/10.1111/cdev.13935</a>.
+</div>
+<div id="ref-kim2010" class="csl-entry" role="listitem">
+Kim, Young-Suk, and Daniel Pallante. 2010. <span>“Predictors of Reading
+Skills for Kindergartners and First Grade Students in Spanish: A
+Longitudinal Study.”</span> <em>Reading and Writing</em> 25 (1): 1–22.
+<a href="https://doi.org/10.1007/s11145-010-9244-0">https://doi.org/10.1007/s11145-010-9244-0</a>.
+</div>
+<div id="ref-Kim2023" class="csl-entry" role="listitem">
+Kim, Y.-S. 2023. <span>“Dimensionality of Comprehension and Retell of
+Narrative and Informational Texts, and the Relations of Language and
+Cognitive Skills to Identified Dimensions.”</span> <em>Child
+Development</em> 94: e246–63.
+</div>
+<div id="ref-kirby2008" class="csl-entry" role="listitem">
+Kirby, John R., Alain Desrochers, Leah Roth, and Sandy S. V. Lai. 2008.
+<span>“Longitudinal Predictors of Word Reading Development.”</span>
+<em>Canadian Psychology / Psychologie Canadienne</em> 49 (2): 103–10. <a href="https://doi.org/10.1037/0708-5591.49.2.103">https://doi.org/10.1037/0708-5591.49.2.103</a>.
+</div>
+<div id="ref-kirby2010" class="csl-entry" role="listitem">
+Kirby, John R., George K. Georgiou, Rhonda Martinussen, and Rauno
+Parrila. 2010. <span>“Naming Speed and Reading: From Prediction to
+Instruction.”</span> <em>Reading Research Quarterly</em> 45 (3): 341–62.
+<a href="https://doi.org/10.1598/rrq.45.3.4">https://doi.org/10.1598/rrq.45.3.4</a>.
+</div>
+<div id="ref-kremin2016" class="csl-entry" role="listitem">
+Kremin, Lena V., Maria M. Arredondo, Lucy Shih-Ju Hsu, Teresa
+Satterfield, and Ioulia Kovelman. 2016. <span>“The Effects of Spanish
+Heritage Language Literacy on English Reading for
+Spanish<span></span>English Bilingual Children in the US.”</span>
+<em>International Journal of Bilingual Education and Bilingualism</em>
+22 (2): 192–206. <a href="https://doi.org/10.1080/13670050.2016.1239692">https://doi.org/10.1080/13670050.2016.1239692</a>.
+</div>
+<div id="ref-landerl2018" class="csl-entry" role="listitem">
+Landerl, Karin, H. Harald Freudenthaler, Moritz Heene, Peter F. De Jong,
+Alain Desrochers, George Manolitsis, Rauno Parrila, and George K.
+Georgiou. 2018. <span>“Phonological Awareness and Rapid Automatized
+Naming as Longitudinal Predictors of Reading in Five Alphabetic
+Orthographies with Varying Degrees of Consistency.”</span>
+<em>Scientific Studies of Reading</em> 23 (3): 220–34. <a href="https://doi.org/10.1080/10888438.2018.1510936">https://doi.org/10.1080/10888438.2018.1510936</a>.
+</div>
+<div id="ref-leafstedt2005" class="csl-entry" role="listitem">
+Leafstedt, Jill M., and Michael M. Gerber. 2005. <span>“Crossover of
+Phonological Processing Skills.”</span> <em>Remedial and Special
+Education</em> 26 (4): 226–35. <a href="https://doi.org/10.1177/07419325050260040501">https://doi.org/10.1177/07419325050260040501</a>.
+</div>
+<div id="ref-Analizador2024" class="csl-entry" role="listitem">
+Legible. 2024. <span>“Analizador de Legibilidad de Texto.”</span> <a href="https://legible.es/">https://legible.es/</a>.
+</div>
+<div id="ref-Lexile2024" class="csl-entry" role="listitem">
+Lexile Text Analyzer. 2024. <span>“Lexile Text Analyzer
+[Software].”</span> <a href="https://hub.lexile.com/analyzer">https://hub.lexile.com/analyzer</a>.
+</div>
+<div id="ref-linacre2006variance" class="csl-entry" role="listitem">
+Linacre, John M. 2006. <span>“Data Variance Explained by Rasch
+Measure.”</span> <em>Rasch Measurement Transactions</em> 20 (1): 1045.
+<a href="https://www.rasch.org/rmt/rmt201k.htm">https://www.rasch.org/rmt/rmt201k.htm</a>.
+</div>
+<div id="ref-lindsey2003" class="csl-entry" role="listitem">
+Lindsey, Kim A., Franklin R. Manis, and Caroline E. Bailey. 2003.
+<span>“Prediction of First-Grade Reading in Spanish-Speaking
+English-Language Learners.”</span> <em>Journal of Educational
+Psychology</em> 95 (3): 482–94. <a href="https://doi.org/10.1037/0022-0663.95.3.482">https://doi.org/10.1037/0022-0663.95.3.482</a>.
+</div>
+<div id="ref-Lobier2012" class="csl-entry" role="listitem">
+Lobier, M., R. Zoubrinetzky, and S. Valdois. 2012. <span>“The Visual
+Attention Span Deficit in Dyslexia Is Visual and Not Verbal.”</span>
+<em>Cortex</em> 48 (6): 768–73.
+</div>
+<div id="ref-lonigan2006" class="csl-entry" role="listitem">
+Lonigan, Christopher J. 2006. <span>“Development, Assessment, and
+Promotion of Preliteracy Skills.”</span> <em>Early Education &amp;
+Development</em> 17 (1): 91–114. <a href="https://doi.org/10.1207/s15566935eed1701_5">https://doi.org/10.1207/s15566935eed1701_5</a>.
+</div>
+<div id="ref-magis2012" class="csl-entry" role="listitem">
+Magis, David, and Gilles Raîche. 2012. <span>“Random Generation of
+Response Patterns Under Computerized Adaptive Testing with
+the<span><em>R</em></span>Package<span><strong>catR</strong></span>.”</span>
+<em>Journal of Statistical Software</em> 48 (8). <a href="https://doi.org/10.18637/jss.v048.i08">https://doi.org/10.18637/jss.v048.i08</a>.
+</div>
+<div id="ref-majerus2016" class="csl-entry" role="listitem">
+Majerus, Steve, and Nelson Cowan. 2016. <span>“The Nature of Verbal
+Short-Term Impairment in Dyslexia: The Importance of Serial
+Order.”</span> <em>Frontiers in Psychology</em> 7 (October). <a href="https://doi.org/10.3389/fpsyg.2016.01522">https://doi.org/10.3389/fpsyg.2016.01522</a>.
+</div>
+<div id="ref-mancilla-martinez2020" class="csl-entry" role="listitem">
+Mancilla-Martinez, Jeannette, Jin Kyoung Hwang, Min Hyun Oh, and Janna
+Brown McClain. 2020. <span>“Early Elementary Grade Dual Language
+Learners from Spanish-Speaking Homes Struggling with English Reading
+Comprehension: The Dormant Role of Language Skills.”</span> <em>Journal
+of Educational Psychology</em> 112 (5): 880–94. <a href="https://doi.org/10.1037/edu0000402">https://doi.org/10.1037/edu0000402</a>.
+</div>
+<div id="ref-mandler1980" class="csl-entry" role="listitem">
+Mandler, George. 1980. <span>“Recognizing: The Judgment of Previous
+Occurrence.”</span> <em>Psychological Review</em> 87 (3): 252–71. <a href="https://doi.org/10.1037/0033-295x.87.3.252">https://doi.org/10.1037/0033-295x.87.3.252</a>.
+</div>
+<div id="ref-Marian2012" class="csl-entry" role="listitem">
+Marian, V., J. Bartolotti, S. Chabal, and A. Shook. 2012.
+<span>“CLEARPOND: Cross-Linguistic Easy-Access Resource for Phonological
+and Orthographic Neighborhood Densities.”</span> <em>PLOS ONE</em> 7
+(8): e43230.
+</div>
+<div id="ref-marinis2015sentence" class="csl-entry" role="listitem">
+Marinis, Theodoros, and Sharon Armon-Lotem. 2015. <span>“Sentence
+Repetition.”</span> In <em>Assessing Multilingual Children:
+Disentangling Bilingualism from Language Impairment</em>, edited by
+Sharon Armon-Lotem, Jan de Jong, and Nirit Meir, 13:95–124. Multilingual
+Matters.
+</div>
+<div id="ref-Martin2013" class="csl-entry" role="listitem">
+Martin, N. A. 2013. <em>Expressive One-Word Picture Vocabulary Test (4th
+Ed., Spanish-Bilingual Ed.)</em>. Academic Therapy Publications.
+</div>
+<div id="ref-Martin2011" class="csl-entry" role="listitem">
+Martin, N. A., and R. Brownell. 2011. <em>Expressive One-Word Picture
+Vocabulary Test (4th Ed.)</em>. Academic Therapy Publications.
+</div>
+<div id="ref-martínez2019" class="csl-entry" role="listitem">
+Martínez, Naroa, and Edurne Goikoetxea. 2019. <span>“Predictors of
+Reading and Spelling Words Change as a Function of Syllabic Structure in
+Spanish.”</span> <em>Psicología Educativa</em> 26 (1): 37–48. <a href="https://doi.org/10.5093/psed2019a20">https://doi.org/10.5093/psed2019a20</a>.
+</div>
+<div id="ref-mcbride-chang1995" class="csl-entry" role="listitem">
+McBride-Chang, Catherine. 1995. <span>“What Is Phonological
+Awareness?”</span> <em>Journal of Educational Psychology</em> 87 (2):
+179–92. <a href="https://doi.org/10.1037/0022-0663.87.2.179">https://doi.org/10.1037/0022-0663.87.2.179</a>.
+</div>
+<div id="ref-mcdougall1994" class="csl-entry" role="listitem">
+McDougall, Siné, Charles Hulme, Andrew Ellis, and Andrew Monk. 1994.
+<span>“Learning to Read: The Role of Short-Term Memory and Phonological
+Skills.”</span> <em>Journal of Experimental Child Psychology</em> 58
+(1): 112–33. <a href="https://doi.org/10.1006/jecp.1994.1028">https://doi.org/10.1006/jecp.1994.1028</a>.
+</div>
+<div id="ref-Mcgregor2013" class="csl-entry" role="listitem">
+McGregor, K. K., J. Oleson, A. Bahnsen, and D. Duff. 2013.
+<span>“Children with Developmental Language Impairment Have Vocabulary
+Deficits Characterized by Limited Breadth and Depth.”</span>
+<em>International Journal of Language &amp; Communication Disorders</em>
+48 (3): 307–19.
+</div>
+<div id="ref-mcgregor2013" class="csl-entry" role="listitem">
+McGregor, Karla K., Jacob Oleson, Alison Bahnsen, and Dawna Duff. 2013.
+<span>“Children with Developmental Language Impairment Have Vocabulary
+Deficits Characterized by Limited Breadth and Depth.”</span>
+<em>International Journal of Language &amp; Communication Disorders</em>
+48 (3): 307–19. <a href="https://doi.org/10.1111/1460-6984.12008">https://doi.org/10.1111/1460-6984.12008</a>.
+</div>
+<div id="ref-mcweeny2022" class="csl-entry" role="listitem">
+McWeeny, Sean, Soujin Choi, June Choe, Alexander LaTourrette, Megan Y.
+Roberts, and Elizabeth S. Norton. 2022. <span>“Rapid Automatized Naming
+(RAN) as a Kindergarten Predictor of Future Reading in English: A
+Systematic Review and Meta<span>-</span>Analysis.”</span> <em>Reading
+Research Quarterly</em> 57 (4): 1187–1211. <a href="https://doi.org/10.1002/rrq.467">https://doi.org/10.1002/rrq.467</a>.
+</div>
+<div id="ref-meijer1999" class="csl-entry" role="listitem">
+Meijer, Rob R., and Michael L. Nering. 1999. <span>“Computerized
+Adaptive Testing: Overview and Introduction.”</span> <em>Applied
+Psychological Measurement</em> 23 (3): 187–94. <a href="https://doi.org/10.1177/01466219922031310">https://doi.org/10.1177/01466219922031310</a>.
+</div>
+<div id="ref-melby-lervåg2011" class="csl-entry" role="listitem">
+Melby-Lervåg, Monica, and Arne Lervåg. 2011.
+<span>“Cross<span>-</span>Linguistic Transfer of Oral Language,
+Decoding, Phonological Awareness and Reading Comprehension: A
+Meta<span>-</span>Analysis of the Correlational Evidence.”</span>
+<em>Journal of Research in Reading</em> 34 (1): 114–35. <a href="https://doi.org/10.1111/j.1467-9817.2010.01477.x">https://doi.org/10.1111/j.1467-9817.2010.01477.x</a>.
+</div>
+<div id="ref-melzi2000" class="csl-entry" role="listitem">
+Melzi, Gigliana. 2000. <span>“Cultural Variations in the Construction of
+Personal Narratives: Central American and European American Mothers’
+Elicitation Styles.”</span> <em>Discourse Processes</em> 30 (2): 153–77.
+<a href="https://doi.org/10.1207/s15326950dp3002_04">https://doi.org/10.1207/s15326950dp3002_04</a>.
+</div>
+<div id="ref-míguez-álvarez2021" class="csl-entry" role="listitem">
+Míguez-Álvarez, Carla, Miguel Cuevas-Alonso, and Ángeles Saavedra. 2021.
+<span>“Relationships Between Phonological Awareness and Reading in
+Spanish: A Meta<span>-</span>Analysis.”</span> <em>Language
+Learning</em> 72 (1): 113–57. <a href="https://doi.org/10.1111/lang.12471">https://doi.org/10.1111/lang.12471</a>.
+</div>
+<div id="ref-miller2006" class="csl-entry" role="listitem">
+Miller, Jon F., John Heilmann, Ann Nockerts, Aquiles Iglesias, Leah
+Fabiano, and David J. Francis. 2006a. <span>“Oral Language and Reading
+in Bilingual Children.”</span> <em>Learning Disabilities Research &amp;
+Practice</em> 21 (1): 30–43. <a href="https://doi.org/10.1111/j.1540-5826.2006.00205.x">https://doi.org/10.1111/j.1540-5826.2006.00205.x</a>.
+</div>
+<div id="ref-miller2006a" class="csl-entry" role="listitem">
+———. 2006b. <span>“Oral Language and Reading in Bilingual
+Children.”</span> <em>Learning Disabilities Research &amp; Practice</em>
+21 (1): 30–43. <a href="https://doi.org/10.1111/j.1540-5826.2006.00205.x">https://doi.org/10.1111/j.1540-5826.2006.00205.x</a>.
+</div>
+<div id="ref-misra2004" class="csl-entry" role="listitem">
+Misra, Maya, Tamar Katzir, Maryanne Wolf, and Russell A. Poldrack. 2004.
+<span>“Neural Systems for Rapid Automatized Naming in Skilled Readers:
+Unraveling the RAN-Reading Relationship.”</span> <em>Scientific Studies
+of Reading</em> 8 (3): 241–56. <a href="https://doi.org/10.1207/s1532799xssr0803_4">https://doi.org/10.1207/s1532799xssr0803_4</a>.
+</div>
+<div id="ref-moll2013" class="csl-entry" role="listitem">
+MOLL, KRISTINA, CHARLES HULME, SONALI NAG, and MARGARET J. SNOWLING.
+2013. <span>“Sentence Repetition as a Marker of Language Skills in
+Children with Dyslexia.”</span> <em>Applied Psycholinguistics</em> 36
+(2): 203–21. <a href="https://doi.org/10.1017/s0142716413000209">https://doi.org/10.1017/s0142716413000209</a>.
+</div>
+<div id="ref-nagy2000vocabulary" class="csl-entry" role="listitem">
+Nagy, W. E., and J. A. Scott. 2000. <span>“Vocabulary Processes.”</span>
+In <em>Handbook of Reading Research</em>, edited by M. L. Kamil, P. B.
+Mosenthal, P. D. Pearson, and R. Barr, 3:269–84. Mahwah, NJ: Lawrence
+Erlbaum Associates.
+</div>
+<div id="ref-nakamoto2006" class="csl-entry" role="listitem">
+Nakamoto, Jonathan, Kim A. Lindsey, and Franklin R. Manis. 2006.
+<span>“A Longitudinal Analysis of English Language
+Learners<span>’</span> Word Decoding and Reading Comprehension.”</span>
+<em>Reading and Writing</em> 20 (7): 691–719. <a href="https://doi.org/10.1007/s11145-006-9045-7">https://doi.org/10.1007/s11145-006-9045-7</a>.
+</div>
+<div id="ref-nakamoto2008" class="csl-entry" role="listitem">
+———. 2008. <span>“A Cross-Linguistic Investigation of English Language
+Learners’ Reading Comprehension in English and Spanish.”</span>
+<em>Scientific Studies of Reading</em> 12 (4): 351–71. <a href="https://doi.org/10.1080/10888430802378526">https://doi.org/10.1080/10888430802378526</a>.
+</div>
+<div id="ref-nation2004" class="csl-entry" role="listitem">
+Nation, Kate, Paula Clarke, Catherine M. Marshall, and Marianne Durand.
+2004. <span>“Hidden Language Impairments in Children.”</span>
+<em>Journal of Speech, Language, and Hearing Research</em> 47 (1):
+199–211. <a href="https://doi.org/10.1044/1092-4388(2004/017)">https://doi.org/10.1044/1092-4388(2004/017)</a>.
+</div>
+<div id="ref-nation2010" class="csl-entry" role="listitem">
+Nation, Kate, Joanne Cocksey, Jo S. H. Taylor, and Dorothy V. M. Bishop.
+2010. <span>“A Longitudinal Investigation of Early Reading and Language
+Skills in Children with Poor Reading Comprehension.”</span> <em>Journal
+of Child Psychology and Psychiatry</em> 51 (9): 1031–39. <a href="https://doi.org/10.1111/j.1469-7610.2010.02254.x">https://doi.org/10.1111/j.1469-7610.2010.02254.x</a>.
+</div>
+<div id="ref-nation2010a" class="csl-entry" role="listitem">
+Nation, Kate, and Charles Hulme. 2010. <span>“Learning to Read Changes
+Children<span>’</span>s Phonological Skills: Evidence from a Latent
+Variable Longitudinal Study of Reading and Nonword Repetition.”</span>
+<em>Developmental Science</em> 14 (4): 649–59. <a href="https://doi.org/10.1111/j.1467-7687.2010.01008.x">https://doi.org/10.1111/j.1467-7687.2010.01008.x</a>.
+</div>
+<div id="ref-NCES2024" class="csl-entry" role="listitem">
+National Center for Education Statistics. 2024. <span>“Students with
+Disabilities. Condition of Education.”</span> U.S. Department of
+Education, Institute of Education Sciences. <a href="https://nces.ed.gov/programs/coe/indicator/cgg">https://nces.ed.gov/programs/coe/indicator/cgg</a>.
+</div>
+<div id="ref-nationalreadingpanel2000report" class="csl-entry" role="listitem">
+National Reading Panel (US). 2000. <span>“Report of the National Reading
+Panel: Teaching Children to Read: An Evidence-Based Assessment of the
+Scientific Research Literature on Reading and Its Implications for
+Reading Instruction: Reports of the Subgroups.”</span> Technical Report.
+Washington, DC: National Institute of Child Health; Human Development,
+National Institutes of Health.
+</div>
+<div id="ref-nrc1998preventing" class="csl-entry" role="listitem">
+National Research Council. 1998. <em>Preventing Reading Difficulties in
+Young Children</em>. Washington, DC: The National Academies Press.
+</div>
+<div id="ref-naveh-benjamin1986" class="csl-entry" role="listitem">
+Naveh-Benjamin, Moshe, and Thomas J. Ayres. 1986. <span>“Digit Span,
+Reading Rate, and Linguistic Relativity.”</span> <em>The Quarterly
+Journal of Experimental Psychology Section A</em> 38 (4): 739–51. <a href="https://doi.org/10.1080/14640748608401623">https://doi.org/10.1080/14640748608401623</a>.
+</div>
+<div id="ref-norton2012" class="csl-entry" role="listitem">
+Norton, Elizabeth S., and Maryanne Wolf. 2012. <span>“Rapid Automatized
+Naming (RAN) and Reading Fluency: Implications for Understanding and
+Treatment of Reading Disabilities.”</span> <em>Annual Review of
+Psychology</em> 63 (1): 427–52. <a href="https://doi.org/10.1146/annurev-psych-120710-100431">https://doi.org/10.1146/annurev-psych-120710-100431</a>.
+</div>
+<div id="ref-OBrien2021" class="csl-entry" role="listitem">
+O’Brien, G., and J. D. Yeatman. 2021. <span>“Bridging Sensory and
+Language Theories of Dyslexia: Toward a Multifactorial Model.”</span>
+<em>Developmental Science</em> 24 (3): e13039.
+</div>
+<div id="ref-oconnor1999" class="csl-entry" role="listitem">
+O’Connor, Rollanda E., and Joseph R. Jenkins. 1999. <span>“Prediction of
+Reading Disabilities in Kindergarten and First Grade.”</span>
+<em>Scientific Studies of Reading</em> 3 (2): 159–97. <a href="https://doi.org/10.1207/s1532799xssr0302_4">https://doi.org/10.1207/s1532799xssr0302_4</a>.
+</div>
+<div id="ref-oh2023" class="csl-entry" role="listitem">
+Oh, Min Hyun, Jeannette Mancilla-Martinez, and Jin Kyoung Hwang. 2023.
+<span>“Revisiting the Traditional Conceptualizations of Vocabulary
+Knowledge as Predictors of Dual Language Learners<span>’</span> English
+Reading Achievement in a New Destination State.”</span> <em>Applied
+Psycholinguistics</em> 44 (1): 51–75. <a href="https://doi.org/10.1017/s0142716422000479">https://doi.org/10.1017/s0142716422000479</a>.
+</div>
+<div id="ref-ozernovpalchik2017" class="csl-entry" role="listitem">
+Ozernov-Palchik, O., E. S. Norton, G. Sideridis, S. D. Beach, M. Wolf,
+J. D. E. Gabrieli, and N. Gaab. 2017. <span>“Longitudinal Stability of
+Pre-Reading Skill Profiles of Kindergarten Children: Implications for
+Early Screening and Theories of Reading.”</span> <em>Developmental
+Science</em> 20 (5).
+</div>
+<div id="ref-parrila2004" class="csl-entry" role="listitem">
+Parrila, Rauno, John R. Kirby, and Lynn McQuarrie. 2004.
+<span>“Articulation Rate, Naming Speed, Verbal Short-Term Memory, and
+Phonological Awareness: Longitudinal Predictors of Early Reading
+Development?”</span> <em>Scientific Studies of Reading</em> 8 (1): 3–26.
+<a href="https://doi.org/10.1207/s1532799xssr0801_2">https://doi.org/10.1207/s1532799xssr0801_2</a>.
+</div>
+<div id="ref-pasquarella2015" class="csl-entry" role="listitem">
+Pasquarella, Adrian, Xi Chen, Alexandra Gottardo, and Esther Geva. 2015.
+<span>“Cross-Language Transfer of Word Reading Accuracy and Word Reading
+Fluency in Spanish-English and Chinese-English Bilinguals:
+Script-Universal and Script-Specific Processes.”</span> <em>Journal of
+Educational Psychology</em> 107 (1): 96–110. <a href="https://doi.org/10.1037/a0036966">https://doi.org/10.1037/a0036966</a>.
+</div>
+<div id="ref-Pelli2006" class="csl-entry" role="listitem">
+Pelli, D. G., C. W. Burns, B. Farell, and D. C. Moore-Page. 2006.
+<span>“Feature Detection and Letter Identification.”</span> <em>Vision
+Research</em> 46 (28): 4646–74.
+</div>
+<div id="ref-Pennington2011" class="csl-entry" role="listitem">
+Pennington, B. F. 2011. <span>“Controversial Therapies for
+Dyslexia.”</span> <em>Perspectives on Language and Literacy</em> 37 (1):
+7–8.
+</div>
+<div id="ref-petersen2012" class="csl-entry" role="listitem">
+Petersen, Douglas B., and Trina D. Spencer. 2012. <span>“The Narrative
+Language Measures: Tools for Language Screening, Progress Monitoring,
+and Intervention Planning.”</span> <em>Perspectives on Language Learning
+and Education</em> 19 (4): 119–29. <a href="https://doi.org/10.1044/lle19.4.119">https://doi.org/10.1044/lle19.4.119</a>.
+</div>
+<div id="ref-piasta2009" class="csl-entry" role="listitem">
+Piasta, Shayne B., David J. Purpura, and Richard K. Wagner. 2009.
+<span>“Fostering Alphabet Knowledge Development: A Comparison of Two
+Instructional Approaches.”</span> <em>Reading and Writing</em> 23 (6):
+607–26. <a href="https://doi.org/10.1007/s11145-009-9174-x">https://doi.org/10.1007/s11145-009-9174-x</a>.
+</div>
+<div id="ref-polisenská2014" class="csl-entry" role="listitem">
+Polišenská, Kamila, Shula Chiat, and Penny Roy. 2014. <span>“Sentence
+Repetition: What Does the Task Measure?”</span> <em>International
+Journal of Language &amp; Communication Disorders</em> 50 (1): 106–18.
+<a href="https://doi.org/10.1111/1460-6984.12126">https://doi.org/10.1111/1460-6984.12126</a>.
+</div>
+<div id="ref-PowellSmith2020" class="csl-entry" role="listitem">
+Powell-Smith, K. A., R. A. Kaminski, R. H. Good, M. Abbott, S. Stollar,
+J. Wallin, and C. E. Wheeler. 2020a. <em>Acadience RAN Assessment
+Manual</em>. Acadience Learning Inc.
+</div>
+<div id="ref-powell-smith2020" class="csl-entry" role="listitem">
+———. 2020b. <em>Acadience RAN Assessment Manual</em>. Acadience Learning
+Inc.
+</div>
+<div id="ref-pratt2020" class="csl-entry" role="listitem">
+Pratt, Amy S., Elizabeth D. Peña, and Lisa M. Bedore. 2020.
+<span>“Sentence Repetition with Bilinguals with and Without DLD:
+Differential Effects of Memory, Vocabulary, and Exposure.”</span>
+<em>Bilingualism: Language and Cognition</em> 24 (2): 305–18. <a href="https://doi.org/10.1017/s1366728920000498">https://doi.org/10.1017/s1366728920000498</a>.
+</div>
+<div id="ref-proctor2006" class="csl-entry" role="listitem">
+Proctor, C. Patrick, Diane August, María S. Carlo, and Catherine Snow.
+2006. <span>“The Intriguing Role of Spanish Language Vocabulary
+Knowledge in Predicting English Reading Comprehension.”</span>
+<em>Journal of Educational Psychology</em> 98 (1): 159–69. <a href="https://doi.org/10.1037/0022-0663.98.1.159">https://doi.org/10.1037/0022-0663.98.1.159</a>.
+</div>
+<div id="ref-proctor2017" class="csl-entry" role="listitem">
+Proctor, C. Patrick, Jeffrey R. Harring, and Rebecca D. Silverman. 2017.
+<span>“Linguistic Interdependence Between Spanish Language and English
+Language and Reading: A Longitudinal Exploration from Second Through
+Fifth Grade.”</span> <em>Bilingual Research Journal</em> 40 (4): 372–91.
+<a href="https://doi.org/10.1080/15235882.2017.1383949">https://doi.org/10.1080/15235882.2017.1383949</a>.
+</div>
+<div id="ref-qi2023" class="csl-entry" role="listitem">
+Qi, Ting, Maria Luisa Mandelli, Christa L. Watson Pereira, Emma Wellman,
+Rian Bogley, Abigail E. Licata, Edward F. Chang, Yulia Oganian, and
+Maria Luisa Gorno-Tempini. 2023. <span>“Anatomical and Behavioral
+Correlates of Auditory Perception in Developmental Dyslexia.”</span> <a href="http://dx.doi.org/10.1101/2023.05.09.539936">http://dx.doi.org/10.1101/2023.05.09.539936</a>.
+</div>
+<div id="ref-Ramamurthy2024b" class="csl-entry" role="listitem">
+Ramamurthy, M., A. L. White, and J. D. Yeatman. 2024. <span>“Children
+with Dyslexia Show No Deficit in Exogenous Spatial Attention but Show
+Differences in Visual Encoding.”</span> <em>Developmental Science</em>
+27 (3): e13458. <a href="https://doi.org/10.1111/desc.13458">https://doi.org/10.1111/desc.13458</a>.
+</div>
+<div id="ref-randall2023b" class="csl-entry" role="listitem">
+Randall, Jennifer, Mya Poe, David Slomp, and Maria Elena Oliveri. 2023.
+<span>“Our Validity Looks Like Justice. Does Yours?”</span> <em>Language
+Testing</em> 41 (1): 203–19. <a href="https://doi.org/10.1177/02655322231202947">https://doi.org/10.1177/02655322231202947</a>.
+</div>
+<div id="ref-reckase1979" class="csl-entry" role="listitem">
+Reckase, Mark D. 1979. <span>“Unifactor Latent Trait Models Applied to
+Multifactor Tests: Results and Implications.”</span> <em>Journal of
+Educational Statistics</em> 4 (3): 207–30. <a href="https://doi.org/10.3102/10769986004003207">https://doi.org/10.3102/10769986004003207</a>.
+</div>
+<div id="ref-reese2009" class="csl-entry" role="listitem">
+Reese, Elaine, Sebastian Suggate, Jennifer Long, and Elizabeth
+Schaughency. 2009. <span>“Children<span>’</span>s Oral Narrative and
+Reading Skills in the First 3&nbsp;Years of Reading Instruction.”</span>
+<em>Reading and Writing</em> 23 (6): 627–44. <a href="https://doi.org/10.1007/s11145-009-9175-9">https://doi.org/10.1007/s11145-009-9175-9</a>.
+</div>
+<div id="ref-reschly2009" class="csl-entry" role="listitem">
+Reschly, Amy L., Todd W. Busch, Joseph Betts, Stanley L. Deno, and
+Jeffrey D. Long. 2009. <span>“Curriculum-Based Measurement Oral Reading
+as an Indicator of Reading Achievement: A Meta-Analysis of the
+Correlational Evidence.”</span> <em>Journal of School Psychology</em> 47
+(6): 427–69. <a href="https://doi.org/10.1016/j.jsp.2009.07.001">https://doi.org/10.1016/j.jsp.2009.07.001</a>.
+</div>
+<div id="ref-Riccio2004" class="csl-entry" role="listitem">
+Riccio, C. A., B. Imhoff, J. E. Hasbrouck, and G. N. Davis. 2004a.
+<em>Test of Phonological Awareness in Spanish</em>. Pro-Ed.
+</div>
+<div id="ref-riccio2004" class="csl-entry" role="listitem">
+———. 2004b. <em>Test of Phonological Awareness in Spanish</em>. Pro-Ed.
+</div>
+<div id="ref-riedel2007" class="csl-entry" role="listitem">
+Riedel, Brant W.RIEDEL. 2007. <span>“The Relation Between DIBELS,
+Reading Comprehension, and Vocabulary in Urban First<span>-</span>Grade
+Students.”</span> <em>Reading Research Quarterly</em> 42 (4): 546–67. <a href="https://doi.org/10.1598/rrq.42.4.5">https://doi.org/10.1598/rrq.42.4.5</a>.
+</div>
+<div id="ref-riva2021" class="csl-entry" role="listitem">
+Riva, Anna, Alessandro Musetti, Monica Bomba, Lorenzo Milani, Valentina
+Montrasi, and Renata Nacinovich. 2021. <span>“Language-Related Skills in
+Bilingual Children with Specific Learning Disorders.”</span>
+<em>Frontiers in Psychology</em> 11 (January). <a href="https://doi.org/10.3389/fpsyg.2020.564047">https://doi.org/10.3389/fpsyg.2020.564047</a>.
+</div>
+<div id="ref-roberts2005" class="csl-entry" role="listitem">
+Roberts, Theresa A. 2005. <span>“Articulation Accuracy and Vocabulary
+Size Contributions to Phonemic Awareness and Word Reading in English
+Language Learners.”</span> <em>Journal of Educational Psychology</em> 97
+(4): 601–16. <a href="https://doi.org/10.1037/0022-0663.97.4.601">https://doi.org/10.1037/0022-0663.97.4.601</a>.
+</div>
+<div id="ref-rubin2005" class="csl-entry" role="listitem">
+Rubin, Renée, and Verónica Galván Carlan. 2005. <span>“Using Writing to
+Understand Bilingual Children’s Literacy Development.”</span> <em>The
+Reading Teacher</em> 58 (8): 728–39. <a href="https://doi.org/10.1598/rt.58.8.3">https://doi.org/10.1598/rt.58.8.3</a>.
+</div>
+<div id="ref-scarborough1998" class="csl-entry" role="listitem">
+Scarborough, Hollis S. 1998. <span>“Predicting the Future Achievement of
+Second Graders with Reading Disabilities: Contributions of Phonemic
+Awareness, Verbal Memory, Rapid Naming, and IQ.”</span> <em>Annals of
+Dyslexia</em> 48 (1): 115–36. <a href="https://doi.org/10.1007/s11881-998-0006-5">https://doi.org/10.1007/s11881-998-0006-5</a>.
+</div>
+<div id="ref-scarborough2001connecting" class="csl-entry" role="listitem">
+Scarborough, Hollis S., Susan B. Neuman, and David K. Dickinson. 2001.
+<span>“Connecting Early Language and Literacy to Later Reading (Dis)
+Abilities: Evidence, Theory, and Practice.”</span> In <em>Handbook of
+Early Literacy Research</em>, 1:97–110. New York, NY: Guilford Press.
+</div>
+<div id="ref-schatschneider2004" class="csl-entry" role="listitem">
+Schatschneider, Christopher, Jack M. Fletcher, David J. Francis, Coleen
+D. Carlson, and Barbara R. Foorman. 2004. <span>“Kindergarten Prediction
+of Reading Skills: A Longitudinal Comparative Analysis.”</span>
+<em>Journal of Educational Psychology</em> 96 (2): 265–82. <a href="https://doi.org/10.1037/0022-0663.96.2.265">https://doi.org/10.1037/0022-0663.96.2.265</a>.
+</div>
+<div id="ref-Schrank2014" class="csl-entry" role="listitem">
+Schrank, F. A., K. S. McGrew, and N. Mather. 2014. <em>Woodcock-Johnson
+IV</em>. Riverside Assessments, LLC.
+</div>
+<div id="ref-Semel2006" class="csl-entry" role="listitem">
+Semel, E., E. H. Wiig, W. A. Secord, and H. W. Langdon. 2006a.
+<em>Clinical Evaluation of Language Fundamentals (4th Ed.,
+Spanish)</em>. Pearson Education Inc.
+</div>
+<div id="ref-semel2006" class="csl-entry" role="listitem">
+———. 2006b. <em>Clinical Evaluation of Language Fundamentals (4th Ed.,
+Spanish)</em>. Pearson Education Inc.
+</div>
+<div id="ref-serrano2008" class="csl-entry" role="listitem">
+Serrano, Francisca, and Sylvia Defior. 2008. <span>“Dyslexia Speed
+Problems in a Transparent Orthography.”</span> <em>Annals of
+Dyslexia</em> 58 (1): 81–95. <a href="https://doi.org/10.1007/s11881-008-0013-6">https://doi.org/10.1007/s11881-008-0013-6</a>.
+</div>
+<div id="ref-serrano2010" class="csl-entry" role="listitem">
+———. 2010. <span>“Spanish Dyslexic Spelling Abilities: The Case of
+Consonant Clusters.”</span> <em>Journal of Research in Reading</em> 35
+(2): 169–82. <a href="https://doi.org/10.1111/j.1467-9817.2010.01454.x">https://doi.org/10.1111/j.1467-9817.2010.01454.x</a>.
+</div>
+<div id="ref-seymour2003" class="csl-entry" role="listitem">
+Seymour, Philip H. K., Mikko Aro, and Jane M. Erskine. 2003.
+<span>“Foundation Literacy Acquisition in European
+Orthographies.”</span> <em>British Journal of Psychology</em> 94 (2):
+143–74. <a href="https://doi.org/10.1348/000712603321661859">https://doi.org/10.1348/000712603321661859</a>.
+</div>
+<div id="ref-Siebert.2025" class="csl-entry" role="listitem">
+Siebert, Julian M, Phaedra Bell, Nuria Gutiérrez, Mónica Zegers, Eric
+Falke, Benjamin W Domingue, Yaacov Petscher, et al. 2025.
+<span>“Differences in Reading Screening Accuracy by Percentile Cutoff
+and English Proficiency: Feature Selection and Group-Wise Prediction
+Evaluation.”</span> <em>Reading Research Quarterly</em>, e70074. <a href="https://doi.org/10.1002/rrq.70074">https://doi.org/10.1002/rrq.70074</a>.
+</div>
+<div id="ref-signorini1997" class="csl-entry" role="listitem">
+Signorini, Angela. 1997. <span>“Word Reading in Spanish: A Comparison
+Between Skilled and Less Skilled Beginning Readers.”</span> <em>Applied
+Psycholinguistics</em> 18 (3): 319–44. <a href="https://doi.org/10.1017/s014271640001050x">https://doi.org/10.1017/s014271640001050x</a>.
+</div>
+<div id="ref-silverman2015" class="csl-entry" role="listitem">
+Silverman, Rebecca D., C. Patrick Proctor, Jeffrey R. Harring, Anna M.
+Hartranft, Brie Doyle, and Sarah B. Zelinke. 2015. <span>“Language
+Skills and Reading Comprehension in English Monolingual and
+Spanish<span></span>English Bilingual Children in Grades
+2<span></span>5.”</span> <em>Reading and Writing</em> 28 (9): 1381–1405.
+<a href="https://doi.org/10.1007/s11145-015-9575-y">https://doi.org/10.1007/s11145-015-9575-y</a>.
+</div>
+<div id="ref-simoncereijido2017bilingual" class="csl-entry" role="listitem">
+Simon-Cereijido, Gabriela, and Vera F. Gutiérrez-Clellen. 2017.
+<span>“Bilingual Education for All: Latino Dual Language Learners with
+Language Disabilities.”</span> In <em>Immersion Education in the Early
+Years</em>, 117–36. Routledge.
+</div>
+<div id="ref-sireci2021" class="csl-entry" role="listitem">
+Sireci, Stephen G., and Jennifer Randall. 2021. <span>“Evolving Notions
+of Fairness in Testing in the United States.”</span> In <em>The History
+of Educational Measurement</em>, 111–35. Routledge.
+</div>
+<div id="ref-snowling2003" class="csl-entry" role="listitem">
+Snowling, Margaret J., Alison Gallagher, and Uta Frith. 2003.
+<span>“Family Risk of Dyslexia Is Continuous: Individual Differences in
+the Precursors of Reading Skill.”</span> <em>Child Development</em> 74
+(2): 358–73. <a href="https://doi.org/10.1111/1467-8624.7402003">https://doi.org/10.1111/1467-8624.7402003</a>.
+</div>
+<div id="ref-snowling2020" class="csl-entry" role="listitem">
+Snowling, Margaret J., and Charles Hulme. 2020. <span>“Annual Research
+Review: Reading Disorders Revisited <span></span> the Critical
+Importance of Oral Language.”</span> <em>Journal of Child Psychology and
+Psychiatry</em> 62 (5): 635–53. <a href="https://doi.org/10.1111/jcpp.13324">https://doi.org/10.1111/jcpp.13324</a>.
+</div>
+<div id="ref-snowling1997" class="csl-entry" role="listitem">
+Snowling, Margaret, Kate Nation, Philippa Moxham, Alison Gallagher, and
+Uta Frith. 1997. <span>“Phonological Processing Skills of Dyslexic
+Students in Higher Education: A Preliminary Report.”</span> <em>Journal
+of Research in Reading</em> 20 (1): 31–41. <a href="https://doi.org/10.1111/1467-9817.00018">https://doi.org/10.1111/1467-9817.00018</a>.
+</div>
+<div id="ref-solano2023" class="csl-entry" role="listitem">
+Solano-Flores, G. 2023. <span>“<span class="nocase">How Serious are We
+About Fairness in Testing and How Far are We Willing to Go? A Response
+to Randall and Bennett with Reflections About the Standards for
+Educational and Psychological Testing</span>.”</span> <em>Educational
+Assessment</em> 28 (2): 105–17. <a href="https://doi.org/10.1080/10627197.2023.2226388">https://doi.org/10.1080/10627197.2023.2226388</a>.
+</div>
+<div id="ref-solari2013" class="csl-entry" role="listitem">
+Solari, Emily J., Terese C. Aceves, Ignacio Higareda, Cara
+Richards-Tutor, Alexis L. Filippini, Michael M. Gerber, and Jill
+Leafstedt. 2013. <span>“LONGITUDINAL PREDICTION OF 1ST AND 2ND GRADE
+ENGLISH ORAL READING FLUENCY IN ENGLISH LANGUAGE LEARNERS: WHICH EARLY
+READING AND LANGUAGE SKILLS ARE BETTER PREDICTORS?”</span>
+<em>Psychology in the Schools</em> 51 (2): 126–42. <a href="https://doi.org/10.1002/pits.21743">https://doi.org/10.1002/pits.21743</a>.
+</div>
+<div id="ref-Sperling1960" class="csl-entry" role="listitem">
+Sperling, G. 1960. <span>“The Information Available in Brief Visual
+Presentations.”</span> <em>Psychological Monographs: General and
+Applied</em> 74 (11): 1.
+</div>
+<div id="ref-stahl2007teaching" class="csl-entry" role="listitem">
+Stahl, S. A., and W. E. Nagy. 2007. <em>Teaching Word Meanings</em>. New
+York, NY: Routledge.
+</div>
+<div id="ref-Stein1997" class="csl-entry" role="listitem">
+Stein, J., and V. Walsh. 1997. <span>“To See but Not to Read; the
+Magnocellular Theory of Dyslexia.”</span> <em>Trends in
+Neurosciences</em> 20 (4): 147–52.
+</div>
+<div id="ref-storch2002" class="csl-entry" role="listitem">
+Storch, Stacey A., and Grover J. Whitehurst. 2002a. <span>“Oral Language
+and Code-Related Precursors to Reading: Evidence from a Longitudinal
+Structural Model.”</span> <em>Developmental Psychology</em> 38 (6):
+934–47. <a href="https://doi.org/10.1037/0012-1649.38.6.934">https://doi.org/10.1037/0012-1649.38.6.934</a>.
+</div>
+<div id="ref-storch2002a" class="csl-entry" role="listitem">
+———. 2002b. <span>“Oral Language and Code-Related Precursors to Reading:
+Evidence from a Longitudinal Structural Model.”</span> <em>Developmental
+Psychology</em> 38 (6): 934–47. <a href="https://doi.org/10.1037/0012-1649.38.6.934">https://doi.org/10.1037/0012-1649.38.6.934</a>.
+</div>
+<div id="ref-sun-alperin2009" class="csl-entry" role="listitem">
+Sun-Alperin, M. Kendra, and Min Wang. 2009. <span>“Cross-Language
+Transfer of Phonological and Orthographic Processing Skills from Spanish
+L1 to English L2.”</span> <em>Reading and Writing</em> 24 (5): 591–614.
+<a href="https://doi.org/10.1007/s11145-009-9221-7">https://doi.org/10.1007/s11145-009-9221-7</a>.
+</div>
+<div id="ref-swank1994" class="csl-entry" role="listitem">
+Swank, Linda K., and Hugh W. Catts. 1994. <span>“Phonological Awareness
+and Written Word Decoding.”</span> <em>Language, Speech, and Hearing
+Services in Schools</em> 25 (1): 9–14. <a href="https://doi.org/10.1044/0161-1461.2501.09">https://doi.org/10.1044/0161-1461.2501.09</a>.
+</div>
+<div id="ref-swanson2011learning" class="csl-entry" role="listitem">
+Swanson, H. Lee, and Linda Siegel. 2011. <span>“Learning Disabilities as
+a Working Memory Deficit.”</span> <em>Experimental Psychology</em> 49
+(1): 5–28.
+</div>
+<div id="ref-swanson2009" class="csl-entry" role="listitem">
+Swanson, H. Lee, Xinhua Zheng, and Olga Jerman. 2009. <span>“Working
+Memory, Short-Term Memory, and Reading Disabilities.”</span> <em>Journal
+of Learning Disabilities</em> 42 (3): 260–87. <a href="https://doi.org/10.1177/0022219409331958">https://doi.org/10.1177/0022219409331958</a>.
+</div>
+<div id="ref-Talcott2002" class="csl-entry" role="listitem">
+Talcott, J. B., C. Witton, G. S. Hebb, C. J. Stoodley, E. A. Westwood,
+S. J. France, P. C. Hansen, and J. F. Stein. 2002. <span>“On the
+Relationship Between Dynamic Visual and Auditory Processing and Literacy
+Skills; Results from a Large Primary-School Study.”</span>
+<em>Dyslexia</em> 8 (4): 204–25.
+</div>
+<div id="ref-taran2022" class="csl-entry" role="listitem">
+Taran, Nikolay, Rola Farah, Mark DiFrancesco, Mekibib Altaye, Jennifer
+Vannest, Scott Holland, Keri Rosch, Bradley L. Schlaggar, and Tzipi
+Horowitz-Kraus. 2022. <span>“The Role of Visual Attention in Dyslexia:
+Behavioral and Neurobiological Evidence.”</span> <em>Human Brain
+Mapping</em> 43 (5): 1720–37. <a href="https://doi.org/10.1002/hbm.25753">https://doi.org/10.1002/hbm.25753</a>.
+</div>
+<div id="ref-torgesen1980" class="csl-entry" role="listitem">
+Torgesen, Joseph K., and D. Griffith Houck. 1980. <span>“Processing
+Deficiencies of Learning-Disabled Children Who Perform Poorly on the
+Digit Span Test.”</span> <em>Journal of Educational Psychology</em> 72
+(2): 141–60. <a href="https://doi.org/10.1037/0022-0663.72.2.141">https://doi.org/10.1037/0022-0663.72.2.141</a>.
+</div>
+<div id="ref-torgesen1977" class="csl-entry" role="listitem">
+Torgesen, Joseph, and Tina Goldman. 1977. <span>“Verbal Rehearsal and
+Short-Term Memory in Reading-Disabled Children.”</span> <em>Child
+Development</em> 48 (1): 56. <a href="https://doi.org/10.2307/1128881">https://doi.org/10.2307/1128881</a>.
+</div>
+<div id="ref-torppa2006" class="csl-entry" role="listitem">
+Torppa, Minna, Anna-Maija Poikkeus, Marja-Leena Laakso, Kenneth Eklund,
+and Heikki Lyytinen. 2006. <span>“Predicting Delayed Letter Knowledge
+Development and Its Relation to Grade 1 Reading Achievement Among
+Children with and Without Familial Risk for Dyslexia.”</span>
+<em>Developmental Psychology</em> 42 (6): 1128–42. <a href="https://doi.org/10.1037/0012-1649.42.6.1128">https://doi.org/10.1037/0012-1649.42.6.1128</a>.
+</div>
+<div id="ref-treiman2021" class="csl-entry" role="listitem">
+Treiman, Rebecca, and Brett Kessler. 2021. <span>“Statistical Learning
+in Word Reading and Spelling Across Languages and Writing
+Systems.”</span> <em>Scientific Studies of Reading</em> 26 (2): 139–49.
+<a href="https://doi.org/10.1080/10888438.2021.1920951">https://doi.org/10.1080/10888438.2021.1920951</a>.
+</div>
+<div id="ref-uccelli2007" class="csl-entry" role="listitem">
+Uccelli, Paola, and Mariela M. Paéz. 2007. <span>“Narrative and
+Vocabulary Development of Bilingual Children From Kindergarten to First
+Grade: Developmental Changes and Associations Among English and Spanish
+Skills.”</span> <em>Language, Speech, and Hearing Services in
+Schools</em> 38 (3): 225–36. <a href="https://doi.org/10.1044/0161-1461(2007/024)">https://doi.org/10.1044/0161-1461(2007/024)</a>.
+</div>
+<div id="ref-Valdois2004" class="csl-entry" role="listitem">
+Valdois, S., M.-L. Bosse, and M.-J. Tainturier. 2004. <span>“The
+Cognitive Deficits Responsible for Developmental Dyslexia: Review of
+Evidence for a Selective Visual Attentional Disorder.”</span>
+<em>Dyslexia</em> 10 (4): 339–63.
+</div>
+<div id="ref-Valdois2021" class="csl-entry" role="listitem">
+Valdois, S., C. Reilhac, E. Ginestet, and M.-L. Bosse. 2021.
+<span>“Varieties of Cognitive Profiles in Poor Readers: Evidence for a
+VAS-Impaired Subtype.”</span> <em>Journal of Learning Disabilities</em>
+54 (3): 221–33.
+</div>
+<div id="ref-VanDenBoer2015" class="csl-entry" role="listitem">
+Van Den Boer, M., E. Van Bergen, and P. F. de Jong. 2015. <span>“The
+Specific Relation of Visual Attention Span with Reading and Spelling in
+Dutch.”</span> <em>Learning and Individual Differences</em> 39: 141–49.
+</div>
+<div id="ref-vellutino2004" class="csl-entry" role="listitem">
+Vellutino, Frank R., Jack M. Fletcher, Margaret J. Snowling, and Donna
+M. Scanlon. 2004. <span>“Specific Reading Disability (Dyslexia): What
+Have We Learned in the Past Four Decades?”</span> <em>Journal of Child
+Psychology and Psychiatry</em> 45 (1): 2–40. <a href="https://doi.org/10.1046/j.0021-9630.2003.00305.x">https://doi.org/10.1046/j.0021-9630.2003.00305.x</a>.
+</div>
+<div id="ref-vellutino2007" class="csl-entry" role="listitem">
+Vellutino, Frank R., William E. Tunmer, James J. Jaccard, and RuSan
+Chen. 2007. <span>“Components of Reading Ability: Multivariate Evidence
+for a Convergent Skills Model of Reading Development.”</span>
+<em>Scientific Studies of Reading</em> 11 (1): 3–32. <a href="https://doi.org/10.1080/10888430709336632">https://doi.org/10.1080/10888430709336632</a>.
+</div>
+<div id="ref-verhagen2019" class="csl-entry" role="listitem">
+Verhagen, Josje, Jan Boom, Hanna Mulder, Elise de Bree, and Paul
+Leseman. 2019. <span>“Reciprocal Relationships Between Nonword
+Repetition and Vocabulary During the Preschool Years.”</span>
+<em>Developmental Psychology</em> 55 (6): 1125–37. <a href="https://doi.org/10.1037/dev0000702">https://doi.org/10.1037/dev0000702</a>.
+</div>
+<div id="ref-verhoeven2017" class="csl-entry" role="listitem">
+Verhoeven, Ludo, and Jos Keuning. 2017. <span>“The Nature of
+Developmental Dyslexia in a Transparent Orthography.”</span>
+<em>Scientific Studies of Reading</em> 22 (1): 7–23. <a href="https://doi.org/10.1080/10888438.2017.1317780">https://doi.org/10.1080/10888438.2017.1317780</a>.
+</div>
+<div id="ref-vettori2023" class="csl-entry" role="listitem">
+Vettori, Giulia, Oriana Incognito, Lucia Bigozzi, and Giuliana Pinto.
+2023. <span>“Relationship Between Lexical, Reading and Spelling Skills
+in Bilingual Language Minority Children and Their Monolingual
+Peers.”</span> <em>Frontiers in Psychology</em> 14 (August). <a href="https://doi.org/10.3389/fpsyg.2023.1121505">https://doi.org/10.3389/fpsyg.2023.1121505</a>.
+</div>
+<div id="ref-Wagner2013" class="csl-entry" role="listitem">
+Wagner, R. K., J. K. Torgesen, C. A. Rashotte, and N. A. Pearson. 2013.
+<em>Comprehensive Test of Phonological Processing (2nd Ed.)</em>.
+Pro-Ed.
+</div>
+<div id="ref-wainer2000cat" class="csl-entry" role="listitem">
+Wainer, Howard, Neil J. Dorans, Ronald Flaugher, Bert F. Green, and
+Robert J. Mislevy. 2000. <em>Computerized Adaptive Testing: A
+Primer</em>. Mahwah, NJ: Routledge.
+</div>
+<div id="ref-Washington2021" class="csl-entry" role="listitem">
+Washington, J. A., and M. S. Seidenberg. 2021. <span>“Teaching Reading
+to African American Children: When Home and School Differ.”</span>
+<em>American Educator</em> 45 (2): 26–40.
+</div>
+<div id="ref-washington2020dyslexia" class="csl-entry" role="listitem">
+Washington, Julie A. et al., eds. 2020. <em>Dyslexia: Revisiting
+Etiology, Diagnosis, Treatment, and Policy</em>. Baltimore, MD: Paul H.
+Brookes Publishing.
+</div>
+<div id="ref-weiss1985" class="csl-entry" role="listitem">
+Weiss, David J. 1985. <span>“Adaptive Testing by Computer.”</span>
+<em>Journal of Consulting and Clinical Psychology</em> 53 (6): 774–89.
+<a href="https://doi.org/10.1037/0022-006x.53.6.774">https://doi.org/10.1037/0022-006x.53.6.774</a>.
+</div>
+<div id="ref-whitehurst1998" class="csl-entry" role="listitem">
+Whitehurst, Graver J., and Christopher J. Lonigan. 1998. <span>“Child
+Development and Emergent Literacy.”</span> <em>Child Development</em> 69
+(3): 848–72. <a href="https://doi.org/10.1111/j.1467-8624.1998.tb06247.x">https://doi.org/10.1111/j.1467-8624.1998.tb06247.x</a>.
+</div>
+<div id="ref-whitehurst2001grtr" class="csl-entry" role="listitem">
+Whitehurst, Grover J., and Christopher J. Lonigan. 2001. <em>Get Ready
+to Read! Revised</em>. National Center for Learning Disabilities;
+Pearson Education Inc.
+</div>
+<div id="ref-Wiig2013" class="csl-entry" role="listitem">
+Wiig, E. H., E. Semel, and W. A. Secord. 2013. <em>Clinical Evaluation
+of Language Fundamentals (5th Ed.)</em>. Pearson Education Inc.
+</div>
+<div id="ref-willburger2008" class="csl-entry" role="listitem">
+Willburger, Edith, Barbara Fussenegger, Kristina Moll, Guilherme Wood,
+and Karin Landerl. 2008. <span>“Naming Speed in Dyslexia and
+Dyscalculia.”</span> <em>Learning and Individual Differences</em> 18
+(2): 224–36. <a href="https://doi.org/10.1016/j.lindif.2008.01.003">https://doi.org/10.1016/j.lindif.2008.01.003</a>.
+</div>
+<div id="ref-wilson2023constructing" class="csl-entry" role="listitem">
+Wilson, Mark. 2023. <em>Constructing Measures: An Item Response Modeling
+Approach</em>. New York, NY: Routledge.
+</div>
+<div id="ref-winters2022" class="csl-entry" role="listitem">
+Winters, Katherine L., Javier Jasso, James E. Pustejovsky, and Courtney
+T. Byrd. 2022. <span>“Investigating Narrative Performance in Children
+With Developmental Language Disorder: A Systematic Review and
+Meta-Analysis.”</span> <em>Journal of Speech, Language, and Hearing
+Research</em> 65 (10): 3908–29. <a href="https://doi.org/10.1044/2022_jslhr-22-00017">https://doi.org/10.1044/2022_jslhr-22-00017</a>.
+</div>
+<div id="ref-wolf1999" class="csl-entry" role="listitem">
+Wolf, Maryanne, and Patricia Greig Bowers. 1999. <span>“The
+Double-Deficit Hypothesis for the Developmental Dyslexias.”</span>
+<em>Journal of Educational Psychology</em> 91 (3): 415–38. <a href="https://doi.org/10.1037/0022-0663.91.3.415">https://doi.org/10.1037/0022-0663.91.3.415</a>.
+</div>
+<div id="ref-wolf2002" class="csl-entry" role="listitem">
+Wolf, Maryanne, Alyssa Goldberg O’Rourke, Calvin Gidney, Maureen Lovett,
+Paul Cirino, and Robin Morris. 2002. <em>Reading and Writing</em> 15
+(1/2): 43–72. <a href="https://doi.org/10.1023/a:1013816320290">https://doi.org/10.1023/a:1013816320290</a>.
+</div>
+<div id="ref-Wolf2003" class="csl-entry" role="listitem">
+Wolf, M., and M. B. Denckla. 2003a. <em>RAN/RAS Rapid Automatized Naming
+and Rapid Alternating Stimulus Tests</em>. Pro-Ed.
+</div>
+<div id="ref-wolf2003" class="csl-entry" role="listitem">
+———. 2003b. <em>RAN/RAS Rapid Automatized Naming and Rapid Alternating
+Stimulus Tests</em>. Pro-Ed.
+</div>
+<div id="ref-Wolf2024" class="csl-entry" role="listitem">
+Wolf, M., R. J. Gotlieb, S. A. Kim, V. Pedroza, L. V. Rhinehart, M. L.
+G. Tempini, and S. Sears. 2024. <span>“Towards a Dynamic, Comprehensive
+Conceptualization of Dyslexia.”</span> <em>Annals of Dyslexia</em>,
+1–22.
+</div>
+<div id="ref-Woodcock2019" class="csl-entry" role="listitem">
+Woodcock, R. W., C. G. Alvarado, F. A. Schrank, N. Mather, K. S. McGrew,
+and A. F. Muñoz-Sandoval. 2019. <em>Batería IV Woodcock-Muñoz</em>.
+Riverside Assessments, LLC.
+</div>
+<div id="ref-wren2021early" class="csl-entry" role="listitem">
+Wren, Yasmin, and Socorro Herrera. 2021. <span>“Early Literacy
+Predictors of Spanish Reading Achievement in Bilingual Children.”</span>
+<em>Bilingual Research Journal</em> 44 (1): 58–73.
+</div>
+<div id="ref-yeo2009" class="csl-entry" role="listitem">
+Yeo, Seungsoo. 2009. <span>“Predicting Performance on State Achievement
+Tests Using Curriculum-Based Measurement in Reading: A Multilevel
+Meta-Analysis.”</span> <em>Remedial and Special Education</em> 31 (6):
+412–22. <a href="https://doi.org/10.1177/0741932508327463">https://doi.org/10.1177/0741932508327463</a>.
+</div>
+<div id="ref-yesil-dagli2011" class="csl-entry" role="listitem">
+Yesil-Dagli, Ummuhan. 2011. <span>“Predicting ELL Students<span>’</span>
+Beginning First Grade English Oral Reading Fluency from Initial
+Kindergarten Vocabulary, Letter Naming, and Phonological Awareness
+Skills.”</span> <em>Early Childhood Research Quarterly</em> 26 (1):
+15–29. <a href="https://doi.org/10.1016/j.ecresq.2010.06.001">https://doi.org/10.1016/j.ecresq.2010.06.001</a>.
+</div>
+<div id="ref-yue2021" class="csl-entry" role="listitem">
+Yue, Qiuhai, and Randi C. Martin. 2021. <span>“Maintaining Verbal
+Short-Term Memory Representations in Non-Perceptual Parietal
+Regions.”</span> <em>Cortex</em> 138 (May): 72–89. <a href="https://doi.org/10.1016/j.cortex.2021.01.020">https://doi.org/10.1016/j.cortex.2021.01.020</a>.
+</div>
+<div id="ref-ziegler2005" class="csl-entry" role="listitem">
+Ziegler, Johannes C., and Usha Goswami. 2005. <span>“Reading
+Acquisition, Developmental Dyslexia, and Skilled Reading Across
+Languages: A Psycholinguistic Grain Size Theory.”</span>
+<em>Psychological Bulletin</em> 131 (1): 3–29. <a href="https://doi.org/10.1037/0033-2909.131.1.3">https://doi.org/10.1037/0033-2909.131.1.3</a>.
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./ch24_us_final-models.html" class="pagination-link" aria-label="Final Screening Models">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">29</span>&nbsp; <span class="chapter-title">Final Screening Models</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
