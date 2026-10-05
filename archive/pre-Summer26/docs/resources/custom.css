@@ -1,0 +1,31 @@
+/* Logo in sidebar - minimal padding */
+.sidebar-logo {
+  padding: 1px;
+  margin: 0;
+}
+
+.sidebar-logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Move landing page logo above the header */
+.landing-page-logo {
+  text-align: center;
+  margin: -1rem auto 1rem;  /* Negative margin pulls it up */
+}
+
+.landing-page-logo img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Center the book title and subtitle on landing page only */
+.quarto-title h1.title {
+  text-align: center;
+}
+
+.quarto-title .subtitle {
+  text-align: center;
+}
